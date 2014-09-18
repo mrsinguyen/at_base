@@ -2,7 +2,7 @@
 
 define('GO1TEST_AUTHOR', 'GO1');
 
-class At_Base_Test_Class {
+class Go1_Base_Test_Class {
   private $name = 'GO1';
 
   public function __construct($name = NULL) {
