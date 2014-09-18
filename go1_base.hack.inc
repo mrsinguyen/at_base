@@ -59,7 +59,7 @@ if (!function_exists('yaml_emit')) {
  */
 function go1_fn_fake($fn, $callback) {
   global $conf;
-  $conf["atfn:{$fn}"] = $callback;
+  $conf["go1fn:{$fn}"] = $callback;
 }
 
 /**
@@ -75,7 +75,7 @@ function go1_fn_fake($fn, $callback) {
  */
 class go1_fake {
   public static function __callStatic($fn, $args) {
-    $GLOBALS['conf']["atfn:{$fn}"] = $args[0];
+    $GLOBALS['conf']["go1fn:{$fn}"] = $args[0];
   }
 }
 

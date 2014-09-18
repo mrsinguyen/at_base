@@ -73,7 +73,7 @@ class CommonTest extends UnitTestCase {
    */
   public function testAtFn() {
     // Fake the function
-    $GLOBALS['conf']['atfn:entity_bundle'] = function($type, $entity) { return $entity->type; };
+    $GLOBALS['conf']['go1fn:entity_bundle'] = function($type, $entity) { return $entity->type; };
 
     // Make sure the fake function is executed
     $this->assertEqual('page', go1_fn('entity_bundle', 'node', (object)array('type' => 'page')));

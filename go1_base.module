@@ -105,7 +105,7 @@ function go1_kv($bin, $options = array(), $engine_name = 'array') {
  * For example:
  *
  *  // Override entity_bundle function
- *  $GLOBALS['conf']['atfn:entity_bundle'] = function($type, $entity) { return $entity->type; };
+ *  $GLOBALS['conf']['go1fn:entity_bundle'] = function($type, $entity) { return $entity->type; };
  *
  *  Call replacable entity_bundle function:
  *    go1_fn('entity_bundle', 'node', $node);
@@ -116,7 +116,7 @@ function go1_kv($bin, $options = array(), $engine_name = 'array') {
 function go1_fn() {
   $args = func_get_args();
   $fn   = array_shift($args);
-  return call_user_func_array(variable_get("atfn:{$fn}", $fn), $args);
+  return call_user_func_array(variable_get("go1fn:{$fn}", $fn), $args);
 }
 
 /**
@@ -126,7 +126,7 @@ function go1_fn() {
  */
 class go1_fn {
   public static function __callStatic($fn, $args) {
-    return call_user_func_array(variable_get("atfn:{$fn}", $fn), $args);
+    return call_user_func_array(variable_get("go1fn:{$fn}", $fn), $args);
   }
 }
 
