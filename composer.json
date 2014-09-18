@@ -1,9 +1,9 @@
 {
-    "name": "andytruong/at_base",
+    "name": "mrsinguyen/go1_base",
     "type": "drupal-module",
     "description": "Provide some more API for developer to work with Drupal",
     "keywords": ["Drupal", "drush", "dependency injection", "container", "config", "api", "autoloader"],
-    "homepage": "http://v3k.net/",
+    "homepage": "http://www.nguyentiensi.com",
     "license": "GPL-2.0",
     "minimum-stability": "dev",
     "authors": [
@@ -17,6 +17,11 @@
             , "email": "tien.xuan.vo@gmail.com"
             , "role": "Contributor"
         }
+        , {
+            "name": "Nguyen Tien Si"
+            , "email": "info@nguyentiensi.com"
+            , "role": "Contributor"
+        }
     ],
     "repositories": [
         {
@@ -27,10 +32,10 @@
                "source": {
                    "url": "http://git.drupal.org/project/drupal.git",
                    "type": "git",
-                   "reference": "7.26"
+                   "reference": "7.31"
                },
                "dist": {
-                   "url": "http://ftp.drupal.org/files/projects/drupal-7.26.zip",
+                   "url": "http://ftp.drupal.org/files/projects/drupal-7.31.zip",
                    "type": "zip"
                }
            }
