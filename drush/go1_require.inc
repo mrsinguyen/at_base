@@ -1,13 +1,13 @@
 <?php
 /**
- * @file ./drush/go1_reqruire.inc
+ * @file ./drush/go1_require.inc
  */
 
-use \Drupal\go1_base\Drush\Command\AtRequire as AtRequireCommand;
-use \Drupal\go1_base\Drush\Command\AtRequireSpyc as AtRequireSpycCommand;
-use \Drupal\go1_base\Drush\Command\AtRequire\DependencyFetcher;
+use \Drupal\go1_base\Drush\Command\Go1Require as Go1RequireCommand;
+use \Drupal\go1_base\Drush\Command\Go1RequireSpyc as Go1RequireSpycCommand;
+use \Drupal\go1_base\Drush\Command\Go1Require\DependencyFetcher;
 
-class DrushMakeProject_AtRequire_Library extends \DrushMakeProject_Library {
+class DrushMakeProject_Go1Require_Library extends \DrushMakeProject_Library {
   /**
    * Override default value of parent.
    */
@@ -20,7 +20,7 @@ class DrushMakeProject_AtRequire_Library extends \DrushMakeProject_Library {
  * Callback for go1_require command.
  */
 function drush_go1_require($module = 'all') {
-  go1_id(new AtRequireCommand($module))->execute();
+  go1_id(new Go1RequireCommand($module))->execute();
 }
 
 /**

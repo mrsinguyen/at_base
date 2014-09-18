@@ -2,9 +2,9 @@
 
 namespace Drupal\go1_base\Drush\Command;
 
-use \Drupal\go1_base\Drush\Command\AtRequire\DependencyFetcher;
+use \Drupal\go1_base\Drush\Command\Go1Require\DependencyFetcher;
 
-class AtRequire {
+class Go1Require {
   private $module;
 
   public function __construct($module = 'all') {

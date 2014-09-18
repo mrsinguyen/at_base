@@ -1,6 +1,6 @@
 <?php
 /**
- * @file ./drush/go1_reqruire.inc
+ * @file ./drush/go1_fontello.inc
  */
 
 use \Drupal\go1_base\Drush\Command\FontEllo as FontElloCommand;

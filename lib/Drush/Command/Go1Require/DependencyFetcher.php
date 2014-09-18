@@ -1,5 +1,5 @@
 <?php
-namespace Drupal\go1_base\Drush\Command\AtRequire;
+namespace Drupal\go1_base\Drush\Command\Go1Require;
 
 class DependencyFetcher {
   private $name;
@@ -82,7 +82,7 @@ class DependencyFetcher {
       'directory_name' => $this->name,
     );
 
-    $class = \DrushMakeProject::getInstance('AtRequire_Library', $this->info);
+    $class = \DrushMakeProject::getInstance('Go1Require_Library', $this->info);
     $class->make();
   }
 }
