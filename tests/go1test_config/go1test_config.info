@@ -1,4 +1,4 @@
-name = GO1est Config
+name = GO1Test Config
 description = "Fixture for go1_config.module"
 version = 7.x-1.0-dev
 core = 7.x

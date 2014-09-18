@@ -80,7 +80,7 @@ class Container extends \Pimple {
    * @return array
    */
   public function find($tag, $return = 'service_name') {
-    $defs = go1_cache("atc:tag:{$tag}, + 1 year", array($this['service.resolver'], 'fetchDefinitions'), array($tag));
+    $defs = go1_cache("go1c:tag:{$tag}, + 1 year", array($this['service.resolver'], 'fetchDefinitions'), array($tag));
 
     if ($return === 'service_name') {
       return $defs;

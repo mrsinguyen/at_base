@@ -1,4 +1,4 @@
-name = GO1est Base
+name = GO1Test Base
 description = Make sure go1_base.module is working
 package = Testing
 core = 7.x

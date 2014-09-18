@@ -31,10 +31,10 @@ function go1_base_drush_command() {
     'callback' => 'drush_go1_cache_clear',
     'description' => 'Flush cache by tags',
     'examples' => array(
-      'drush atcc go1-config' => 'Flush cached content tagged with go1-config',
-      'drush atcc node user' => 'Flush cached content tagged with node or user',
+      'drush go1cc go1-config' => 'Flush cached content tagged with go1-config',
+      'drush go1cc node user' => 'Flush cached content tagged with node or user',
     ),
-    'aliases' => array('cache:clear', 'atcc', 'go1_cache:clear'),
+    'aliases' => array('cache:clear', 'go1cc', 'go1_cache:clear'),
   );
 
   $cmds['go1_fontello'] = array(

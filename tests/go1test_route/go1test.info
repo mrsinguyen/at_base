@@ -1,4 +1,4 @@
-name = GO1est Route
+name = GO1Test Route
 core = 7.x
 
 hidden = TRUE

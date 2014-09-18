@@ -26,7 +26,7 @@ services:
 
   go1test_base.include_me:
     file: '@go1test_base/lib/Include_Me.php'
-    class: 'GO1est_Base_Include_Me'
+    class: 'GO1Test_Base_Include_Me'
 
   go1test_base.psr0_me:
     autoload:
@@ -38,6 +38,6 @@ services:
   go1test_base.psr4_me:
     autoload:
       type: psr-4
-      namespace: GO1est\go1test_base
+      namespace: GO1Test\go1test_base
       includePath: '@go1test_base/psr-4'
-    class: 'GO1est\go1test_base\PSR4Me'
+    class: 'GO1Test\go1test_base\PSR4Me'

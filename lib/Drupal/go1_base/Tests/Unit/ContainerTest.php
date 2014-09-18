@@ -36,7 +36,7 @@ class ContainerTest extends UnitTestCase {
 
   public function testIncludingFile() {
     $service = go1_container('go1test_base.include_me');
-    $this->assertEqual('GO1est_Base_Include_Me', get_class($service));
+    $this->assertEqual('GO1Test_Base_Include_Me', get_class($service));
   }
 
   public function testDynamicArguments() {
@@ -53,7 +53,7 @@ class ContainerTest extends UnitTestCase {
 
   public function testAutoloadPSR4() {
     $service = go1_container('go1test_base.psr4_me');
-    $this->assertEqual('GO1est\go1test_base\PSR4Me', get_class($service));
+    $this->assertEqual('GO1Test\go1test_base\PSR4Me', get_class($service));
   }
 
   public function testTaggedServices() {
