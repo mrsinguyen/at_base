@@ -79,7 +79,7 @@ class Config {
 
     $options = array('id' => "GO1Config:{$this->module}:{$this->id}");
     $options['ttl'] = '+ 1 year';
-    $options['tags'] = array('at-config');
+    $options['tags'] = array('go1-config');
 
     $this->config_data = go1_cache($options, function() use ($resolver) {
       return $resolver->fetchData();

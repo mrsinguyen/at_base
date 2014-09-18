@@ -127,7 +127,7 @@ class Controller {
 
       // Prepair the cache ID
       if (empty($this->route['cache']['id'])) {
-        $this->route['cache']['id'] = 'atroute:' . $this->menu_item['tab_root_href'];
+        $this->route['cache']['id'] = 'go1route:' . $this->menu_item['tab_root_href'];
       }
     }
   }

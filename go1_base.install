@@ -84,7 +84,7 @@ function go1_base_requirements($phase) {
     'value' => function_exists('drupal_get_path')
       ? ($fn == 'yaml_parse' ? 'yaml extension' : 'spyc')
       : $t('Unavailable'),
-    'description' => $t('There is no YAML reader available. Please install yaml pecl extension or run drush atr to download spyc library.'),
+    'description' => $t('There is no YAML reader available. Please install yaml pecl extension or run drush go1r to download spyc library.'),
     'severity' => !function_exists('drupal_get_path') ? REQUIREMENT_WARNING : REQUIREMENT_OK,
     'weight' => -1000
   );

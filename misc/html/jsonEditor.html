@@ -18,12 +18,12 @@
     var container = document.getElementById("jsoneditor");
     var editor = new jsoneditor.JSONEditor(container);
 
-    editor.set(JSON.parse(parent.window.document.getElementById('edit-at-config-item').value));
+    editor.set(JSON.parse(parent.window.document.getElementById('edit-go1-config-item').value));
 
     (function($, document){
         $(function(){
-            $('#at-form', document).submit(function(){
-                $('#edit-at-config-item', document).val(JSON.stringify(editor.get()));
+            $('#go1-form', document).submit(function(){
+                $('#edit-go1-config-item', document).val(JSON.stringify(editor.get()));
             });
         });
     })(jQuery, parent.window.document);

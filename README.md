@@ -30,5 +30,5 @@ Provide some more API for developer to work with Drupal 7.
 - [Easy Block](https://github.com/mrsinguyen/go1_base/wiki/7.x-2.x-easy-routing)
 - [Useful functions](https://github.com/mrsinguyen/go1_base/wiki/7.x-2.x-functions)
 - [Twig template](https://github.com/mrsinguyen/go1_base/wiki/7.x-2.x-twig-recipes)
-- [drush at-require](https://github.com/mrsinguyen/go1_base/wiki/7.x-2.x-drush-at-require)
+- [drush go1-require](https://github.com/mrsinguyen/go1_base/wiki/7.x-2.x-drush-go1-require)
 - [and more…](https://github.com/mrsinguyen/go1_base/wiki/_pages)

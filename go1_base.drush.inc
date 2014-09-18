@@ -20,7 +20,7 @@ function go1_base_drush_command() {
       'drush go1_require => Download dependencies for all modules',
       'drush go1_require module_name => Download dependencies for specific module'
     ),
-    'aliases' => array('at-require', 'atr'),
+    'aliases' => array('go1-require', 'go1r'),
     'bootstrap' => DRUSH_BOOTSTRAP_DRUPAL_FULL,
     'options' => array(
       'working-copy' => 'Preserves VCS directories, like .git, for projects downloaded using such methods.',
@@ -31,7 +31,7 @@ function go1_base_drush_command() {
     'callback' => 'drush_go1_cache_clear',
     'description' => 'Flush cache by tags',
     'examples' => array(
-      'drush atcc at-config' => 'Flush cached content tagged with at-config',
+      'drush atcc go1-config' => 'Flush cached content tagged with go1-config',
       'drush atcc node user' => 'Flush cached content tagged with node or user',
     ),
     'aliases' => array('cache:clear', 'atcc', 'go1_cache:clear'),
