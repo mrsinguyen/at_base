@@ -31,7 +31,7 @@ projects:
     type: library
     download:
       type: file
-      url: 'http://fortawesome.github.io/Font-Awesome/assets/font-awesome-4.0.3.zip'
+      url: 'http://fontawesome.io/assets/font-awesome-4.2.0.zip'
 
   fontello:
     type: library
