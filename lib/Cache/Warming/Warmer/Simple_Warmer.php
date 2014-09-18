@@ -1,5 +1,5 @@
 <?php
-namespace Drupal\at_base\Cache\Warming\Warmer;
+namespace Drupal\go1_base\Cache\Warming\Warmer;
 
 class Simple_Warmer implements Warmer_Interface {
   public function validateTag($tag) {
