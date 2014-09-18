@@ -44,13 +44,13 @@ abstract class UnitTestCase extends \DrupalUnitTestCase {
   protected function setUpModules() {
     // go1_modules() > system_list() > need db, fake it!
     // 'id' => "GO1Config:{$module}:{$id}:{$key}:" . ($include_go1_base ? 1 : 0),
-    $cids_1 = array('atmodules:go1_base:', 'atmodules:go1_base:services', 'atmodules:go1_base:twig_functions');
+    $cids_1 = array('go1modules:go1_base:', 'go1modules:go1_base:services', 'go1modules:go1_base:twig_functions');
     $data_1 = array('go1_base', 'go1test_base');
     foreach ($cids_1 as $cid) {
       go1_container('wrapper.cache')->set($cid, $data_1, 'cache_bootstrap');
     }
 
-    $cids_2 = array('atmodules:go1_base:twig_filters');
+    $cids_2 = array('go1modules:go1_base:twig_filters');
     $data_2 = array('go1_base');
     foreach ($cids_2 as $cid) {
       go1_container('wrapper.cache')->set($cid, $data_2, 'cache_bootstrap');

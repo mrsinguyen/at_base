@@ -21,7 +21,7 @@ class BreadcrumbTest extends UnitTestCase {
     parent::setUpModules();
 
     // Fake go1_modules('go1_base', 'breadcrumb');
-    go1_container('wrapper.cache')->set('atmodules:go1_base:breadcrumb', array('go1test_base'), 'cache_bootstrap');
+    go1_container('wrapper.cache')->set('go1modules:go1_base:breadcrumb', array('go1test_base'), 'cache_bootstrap');
 
     // Fake entity_bundle(), token_replace(), l() functions
     go1_fn_fake('entity_bundle', function($type, $entity) { return $entity->type; });

@@ -206,7 +206,7 @@ function go1_config($module, $id = 'config', $refresh = FALSE) {
 function go1_modules($base_module = 'go1_base', $config_file = '') {
   $o['ttl'] = '+ 1 year';
   $o['bin'] = 'cache_bootstrap';
-  $o['id']  = "atmodules:{$base_module}:{$config_file}";
+  $o['id']  = "go1modules:{$base_module}:{$config_file}";
 
   return go1_cache($o, function() use ($base_module, $config_file) {
     $module_enabled = system_list('module_enabled');
