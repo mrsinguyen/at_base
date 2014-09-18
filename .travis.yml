@@ -42,7 +42,7 @@ before_script:
   # ---------------------
   - wget https://github.com/mrsinguyen/go1test_profile/archive/master.zip
   - unzip -qq master
-  - mv atest_profile-master $DRUPAL
+  - mv go1test_profile-master $DRUPAL
   - cd $DRUPAL
   - drush si testing --db-url=mysql://root:@localhost/drupal --yes
   - mv $VENDOR/* sites/all/modules/

@@ -3,12 +3,12 @@ GO1 Base
 
 Provide some more API for developer to work with Drupal 7.
 
-[![Build Status](https://secure.travis-ci.org/atdrupal/at_base.png?branch=dev-master)](http://travis-ci.org/atdrupal/at_base) [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/atdrupal/at_base/badges/quality-score.png?s=f287f3ed102cedb11091668e5f6cb61b7603348a)](https://scrutinizer-ci.com/g/atdrupal/at_base/) [![Latest Stable Version](https://poser.pugx.org/andytruong/at_base/v/stable.png)](https://packagist.org/packages/andytruong/at_base) [![Latest Unstable Version](https://poser.pugx.org/andytruong/at_base/v/unstable.png)](https://packagist.org/packages/andytruong/at_base)
+[![Build Status](https://travis-ci.org/mrsinguyen/go1_base.svg?branch=v7.2)](https://travis-ci.org/mrsinguyen/go1_base)
 
 ### Install
 
-    drush dl at_base
-    drush atr at_base
+    drush dl go1_base
+    drush go1r go1_base
 
 ### Requirements:
 
