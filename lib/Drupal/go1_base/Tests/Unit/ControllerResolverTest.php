@@ -20,7 +20,7 @@ class ControllerResolverTest extends UnitTestCase {
   }
 
   public function testObjectMethodPair() {
-    $obj = new \At_Base_Test_Class();
+    $obj = new \Go1_Base_Test_Class();
     $definition = array($obj, 'foo');
     $expected = array($obj, 'foo');
     $actual = $this->resolver->get($definition);
@@ -28,8 +28,8 @@ class ControllerResolverTest extends UnitTestCase {
   }
 
   public function testStaticMethod() {
-    $definition = 'At_Base_Test_Class::foo';
-    $expected = array('At_Base_Test_Class', 'foo');
+    $definition = 'Go1_Base_Test_Class::foo';
+    $expected = array('Go1_Base_Test_Class', 'foo');
     $actual = $this->resolver->get($definition);
     $this->assertEqual($expected, $actual);
   }
@@ -50,7 +50,7 @@ class ControllerResolverTest extends UnitTestCase {
   }
 
   public function testObjectInvoke() {
-    $obj = new \At_Base_Test_Class();
+    $obj = new \Go1_Base_Test_Class();
     $definition = $obj;
     $expected = $obj;
     $actual = $this->resolver->get($definition);
@@ -58,8 +58,8 @@ class ControllerResolverTest extends UnitTestCase {
   }
 
   public function testClassStringInvoke() {
-    $definition = 'At_Base_Test_Class';
-    $expected = 'At_Base_Test_Class';
+    $definition = 'Go1_Base_Test_Class';
+    $expected = 'Go1_Base_Test_Class';
     $actual = $this->resolver->get($definition);
     $this->assertEqual($expected, get_class($actual));
   }

@@ -26,7 +26,7 @@ class ServiceContentRenderTest extends UnitTestCase {
   }
 
   public function testStaticMethod() {
-    $output = $this->render->render(array('function' => '\At_Base_Test_Class::helloStatic'));
+    $output = $this->render->render(array('function' => '\Go1_Base_Test_Class::helloStatic'));
     $this->assertEqual('Hello GO1', $output);
   }
 
@@ -63,21 +63,21 @@ class ServiceContentRenderTest extends UnitTestCase {
     $this->assertEqual($expected, $this->render->render($data));
 
     // Static call
-    $data['variables'] = 'At_Base_Test_Class::staticGetVariables';
+    $data['variables'] = 'Go1_Base_Test_Class::staticGetVariables';
     $this->assertEqual($expected, $this->render->render($data));
 
     // object/method
-    $obj = new \At_Base_Test_Class();
+    $obj = new \Go1_Base_Test_Class();
     $data['variables'] = array($obj, 'getVariables');
     $this->assertEqual($expected, $this->render->render($data));
 
     // Class/Method
-    $data['variables'] = array('At_Base_Test_Class', 'staticGetVariables');
+    $data['variables'] = array('Go1_Base_Test_Class', 'staticGetVariables');
     $this->assertEqual($expected, $this->render->render($data));
 
     // getVariables method of controller class
     unset($data['variables']);
-    $data['controller'] = array('At_Base_Test_Class', 'hi');
+    $data['controller'] = array('Go1_Base_Test_Class', 'hi');
     $this->assertEqual($expected, $this->render->render($data));
   }
 }

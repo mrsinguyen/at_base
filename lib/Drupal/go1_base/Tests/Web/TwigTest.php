@@ -63,7 +63,7 @@ class TwigTest extends \DrupalWebTestCase {
   }
 }
 
-// class At_Base_Cache_Views_Warmer extends DrupalWebTestCase {
+// class Go1_Base_Cache_Views_Warmer extends DrupalWebTestCase {
 //   public function getInfo() {
 //     return array(
 //       'name' => 'GO1 Theming: GO1 Cache > Views-Cache warmer',

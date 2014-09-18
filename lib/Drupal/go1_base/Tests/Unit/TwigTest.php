@@ -37,13 +37,13 @@ class TwigTest extends UnitTestCase {
     $this->assertEqual($twig->render("{{  '  Drupal 7  '|fn__trim  }}"),  'Drupal 7');
     $this->assertEqual($twig->render("{{  fn__trim('  Drupal 7  ')  }}"), 'Drupal 7');
 
-    // Use At_Base_Test_Class::helloStatic()
-    $this->assertEqual($twig->render("{{  'Drupal 8'|At_Base_Test_Class__class__helloStatic  }}"),  'Hello Drupal 8');
-    $this->assertEqual($twig->render("{{  At_Base_Test_Class__class__helloStatic('Drupal 8')  }}"), 'Hello Drupal 8');
+    // Use Go1_Base_Test_Class::helloStatic()
+    $this->assertEqual($twig->render("{{  'Drupal 8'|Go1_Base_Test_Class__class__helloStatic  }}"),  'Hello Drupal 8');
+    $this->assertEqual($twig->render("{{  Go1_Base_Test_Class__class__helloStatic('Drupal 8')  }}"), 'Hello Drupal 8');
 
-    // Use At_Base_Test_Class::helloProperty()
-    $this->assertEqual($twig->render("{{  'PHP'|At_Base_Test_Class__obj__helloProperty  }}"), 'Hello PHP');
-    $this->assertEqual($twig->render("{{  At_Base_Test_Class__obj__helloProperty('PHP')  }}"), 'Hello PHP');
+    // Use Go1_Base_Test_Class::helloProperty()
+    $this->assertEqual($twig->render("{{  'PHP'|Go1_Base_Test_Class__obj__helloProperty  }}"), 'Hello PHP');
+    $this->assertEqual($twig->render("{{  Go1_Base_Test_Class__obj__helloProperty('PHP')  }}"), 'Hello PHP');
 
     // Namespace
     $this->assertEqual($twig->render("{{  'Namespace'|ns_Drupal__go1test_base__Service_1__class__helloStatic  }}"),  'Hello Namespace');
@@ -61,7 +61,7 @@ class TwigTest extends UnitTestCase {
     $string_1  = "{% set options = { cache_id: 'go1testTwigCache:1' } %}";
     $string_1 .= "\n {{ 'go1test_base.service_1:hello' | cache(options) }}";
     $string_2  = "{% set options = { cache_id: 'go1testTwigCache:2' } %}";
-    $string_2 .= "\n {{ 'At_Base_Test_Class::helloStatic' | cache(options) }}";
+    $string_2 .= "\n {{ 'Go1_Base_Test_Class::helloStatic' | cache(options) }}";
     $string_3  = "{% set options = { cache_id: 'go1testTwigCache:3' } %}";
     $string_3 .= "\n {{ 'go1test_base_hello' | cache(options) }}";
     $string_4  = "{% set options  = { cache_id: 'go1testTwigCache:4' } %}";

@@ -10,7 +10,7 @@ namespace Drupal\go1_base\Helper;
  *  %%name    => /path/to/libraries/name
  * @code
  *
- * @see \At_Base_TestCase::testRealPath()
+ * @see \Go1_Base_TestCase::testRealPath()
  */
 class Real_Path {
 
