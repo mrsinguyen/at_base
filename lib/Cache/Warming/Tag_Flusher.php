@@ -51,8 +51,8 @@ class Tag_Flusher {
    * Clear cached items which were tagged.
    */
   protected function clearCachedItems() {
-    $items = $this->db->select('go1_base_cache_tag', 'atag')
-              ->fields('atag', array('bin', 'cid'))
+    $items = $this->db->select('go1_base_cache_tag', 'go1tag')
+              ->fields('go1tag', array('bin', 'cid'))
               ->condition('tag', $this->tags)
               ->execute()
               ->fetchAll();
