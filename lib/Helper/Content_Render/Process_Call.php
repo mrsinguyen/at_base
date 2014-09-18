@@ -1,5 +1,5 @@
 <?php
-namespace Drupal\at_base\Helper\Content_Render;
+namespace Drupal\go1_base\Helper\Content_Render;
 
 class Process_Call {
   private $before;
@@ -15,7 +15,7 @@ class Process_Call {
   }
 
   private function runCallbacks($calls) {
-    $cr = at_container('helper.controller.resolver');
+    $cr = go1_container('helper.controller.resolver');
     foreach ($calls as $call) {
       $call = is_string($call) ? array($call, array()) : $call;
       if ($controller = $cr->get($call[0])) {
@@ -32,7 +32,7 @@ class Process_Call {
         $this->prepareArguments($arg);
       }
       elseif (is_string($arg) && preg_match('/^[@%].+/', $arg)) {
-        $arg = at_container('helper.real_path')->get($arg);
+        $arg = go1_container('helper.real_path')->get($arg);
       }
     }
   }

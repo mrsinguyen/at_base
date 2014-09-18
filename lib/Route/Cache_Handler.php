@@ -2,9 +2,9 @@
 /**
  * Cache handler for route.
  */
-namespace Drupal\at_base\Route;
+namespace Drupal\go1_base\Route;
 
-use Drupal\at_base\Helper\Content_Render\CacheHandler_Interface;
+use Drupal\go1_base\Helper\Content_Render\CacheHandler_Interface;
 
 class Cache_Handler implements CacheHandler_Interface {
   protected $options;
@@ -60,6 +60,6 @@ class Cache_Handler implements CacheHandler_Interface {
       }
     }
 
-    return at_cache($o, $this->callback);
+    return go1_cache($o, $this->callback);
   }
 }

@@ -1,5 +1,5 @@
 <?php
-namespace Drupal\atest_base;
+namespace Drupal\go1test_base;
 
 class Service_2 {
   private $service_1;

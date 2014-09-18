@@ -1,5 +1,5 @@
 <?php
-namespace Drupal\at_base\Cache\Warming\Warmer;
+namespace Drupal\go1_base\Cache\Warming\Warmer;
 
 class Entity_Warmer implements Warmer_Interface {
   private $entity_info;
@@ -62,7 +62,7 @@ class Entity_Warmer implements Warmer_Interface {
     $tag = str_replace($this->getTagFind(), $this->getTagReplace(), $tag);
 
     // Warm relationship entities
-    $relationship_warmers = at_container('container')->find('cache.warmer.entity.relationships', 'service');
+    $relationship_warmers = go1_container('container')->find('cache.warmer.entity.relationships', 'service');
     foreach ($relationship_warmers as $relationship_warmer) {
       if ($relationship_warmer->validateTag($tag)) {
         $relationship_warmer->processTag($tag, $this);

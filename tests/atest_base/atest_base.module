@@ -1,9 +1,9 @@
 <?php
 
-define('ATEST_AUTHOR', 'Andy Truong');
+define('GO1TEST_AUTHOR', 'GO1');
 
 class At_Base_Test_Class {
-  private $name = 'Andy Truong';
+  private $name = 'GO1';
 
   public function __construct($name = NULL) {
     if (!is_null($name)) {
@@ -23,40 +23,40 @@ class At_Base_Test_Class {
     return "Hello {$this->name}";
   }
 
-  public function hello($name = 'Andy Truong') {
+  public function hello($name = 'GO1') {
     return "Hello {$name}";
   }
 
-  public static function helloStatic($name = 'Andy Truong') {
+  public static function helloStatic($name = 'GO1') {
     return "Hello {$name}";
   }
 
   public function getVariables() {
-    return atest_variables();
+    return go1test_variables();
   }
 
   public static function staticGetVariables() {
-    return atest_variables();
+    return go1test_variables();
   }
 }
 
-function atest_base_hello($name = 'Andy Truong') {
+function go1test_base_hello($name = 'GO1') {
   return "Hello {$name}";
 }
 
 /**
- * @see Drupal\at_base\Tests\Unit\ServiceContentRenderTest::testDynamicVariables
+ * @see Drupal\go1_base\Tests\Unit\ServiceContentRenderTest::testDynamicVariables
  */
-function atest_variables() {
+function go1test_variables() {
   return array(
-    'name' => ATEST_AUTHOR,
+    'name' => GO1TEST_AUTHOR,
   );
 }
 
 /**
  * Implements hook_views_api().
  */
-function atest_base_views_api($module, $api) {
+function go1test_base_views_api($module, $api) {
   if ($module == 'views' && $api == 'views_default') {
     return array('version' => 2);
   }

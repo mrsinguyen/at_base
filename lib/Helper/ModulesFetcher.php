@@ -1,8 +1,8 @@
 <?php
-namespace Drupal\at_base\Helper;
+namespace Drupal\go1_base\Helper;
 
 /**
- * @see at_modules()
+ * @see go1_modules()
  */
 class ModulesFetcher {
   private $base_module;

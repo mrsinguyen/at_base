@@ -1,4 +1,4 @@
 twig_functions:
-  atest_1: atest_base_hello
-  atest_2: [At_Base_Test_Class, helloStatic]
-  __atest_3: [At_Base_Test_Class, helloProperty]
+  go1test_1: go1test_base_hello
+  go1test_2: [At_Base_Test_Class, helloStatic]
+  __go1test_3: [At_Base_Test_Class, helloProperty]

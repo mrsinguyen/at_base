@@ -1,8 +1,8 @@
 <?php
-namespace Drupal\at_base\Hook;
+namespace Drupal\go1_base\Hook;
 
 /**
- * Details for at_base_flush_caches().
+ * Details for go1_base_flush_caches().
  */
 class Flush_Cache {
   public function execute() {
@@ -13,7 +13,7 @@ class Flush_Cache {
   }
 
   private function flushTaggedCacheData() {
-    at_container('wrapper.db')->delete('at_base_cache_tag')->execute();
+    go1_container('wrapper.db')->delete('go1_base_cache_tag')->execute();
   }
 
   private function flushAPCData() {
@@ -23,7 +23,7 @@ class Flush_Cache {
   }
 
   private function refreshCachedModules() {
-    at_modules('at_base', TRUE);
+    go1_modules('go1_base', TRUE);
   }
 
   /**
@@ -39,7 +39,7 @@ class Flush_Cache {
 
   public function resolveModuleWeight($module_name, $weight) {
     if (is_numeric($weight)) {
-      at_container('wrapper.db')
+      go1_container('wrapper.db')
         ->update('system')
         ->condition('name', $module_name)
         ->fields(array('weight' => $weight))

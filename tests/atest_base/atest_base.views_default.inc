@@ -8,15 +8,15 @@
 /**
  * Implements hook_views_default_views().
  */
-function atest_base_views_default_views() {
+function go1test_base_views_default_views() {
   $views = array();
 
   $view = new view();
-  $view->name = 'atest_theming_user';
+  $view->name = 'go1test_theming_user';
   $view->description = '';
   $view->tag = 'default';
   $view->base_table = 'users';
-  $view->human_name = 'atest_theming_user';
+  $view->human_name = 'go1test_theming_user';
   $view->core = 7;
   $view->api_version = '3.0';
   $view->disabled = FALSE; /* Edit this to true to make a default view disabled initially */
@@ -88,8 +88,8 @@ function atest_base_views_default_views() {
 
   /* Display: Page */
   $handler = $view->new_display('page', 'Page', 'page_1');
-  $handler->display->display_options['path'] = 'atest_theming/users';
-  $views['atest_theming_user'] = $view;
+  $handler->display->display_options['path'] = 'go1test_theming/users';
+  $views['go1test_theming_user'] = $view;
 
   return $views;
 }

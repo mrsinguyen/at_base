@@ -1,14 +1,14 @@
 <?php
 
-namespace Drupal\at_base\KV;
+namespace Drupal\go1_base\KV;
 
 /**
  * Callback for kv.expirable service.
  *
  * Mostly copied from Drupal\Core\KeyValueStore\DatabaseStorageExpirable
  */
-class Expirable extends \Drupal\at_base\KV {
-  public function __construct($collection, $table = 'at_kv_expire') {
+class Expirable extends \Drupal\go1_base\KV {
+  public function __construct($collection, $table = 'go1_kv_expire') {
     parent::__construct($collection, $table);
   }
 
@@ -20,7 +20,7 @@ class Expirable extends \Drupal\at_base\KV {
           . '  WHERE expire > :now AND name IN (:keys) AND collection = :collection'
         ,
         array(
-          ':now' => \at_fn::time(),
+          ':now' => \go1_fn::time(),
           ':keys' => $keys,
           ':collection' => $this->collection,
         ))
@@ -37,7 +37,7 @@ class Expirable extends \Drupal\at_base\KV {
         ,
         array(
           ':collection' => $this->collection,
-          ':now' => \at_fn::time(),
+          ':now' => \go1_fn::time(),
         )
       )->fetchAllKeyed();
     return array_map('unserialize', $values);
@@ -46,7 +46,7 @@ class Expirable extends \Drupal\at_base\KV {
   public function setWithExpire($key, $value, $expire) {
     $this->db->merge($this->table)
       ->key(array('name' => $key, 'collection' => $this->collection))
-      ->fields(array('value' => serialize($value), 'expire' => \at_fn::time() + $expire))
+      ->fields(array('value' => serialize($value), 'expire' => \go1_fn::time() + $expire))
       ->execute()
     ;
   }
@@ -57,7 +57,7 @@ class Expirable extends \Drupal\at_base\KV {
         'collection' => $this->collection,
         'name' => $key,
         'value' => serialize($value),
-        'expire' => \at_fn::time() + $expire,
+        'expire' => \go1_fn::time() + $expire,
       ))
       ->condition('collection', $this->collection)
       ->condition('name', $key)

@@ -1,5 +1,5 @@
 <?php
-namespace Drupal\at_base\Icon;
+namespace Drupal\go1_base\Icon;
 
 class Icon {
   protected $tag;

@@ -1,5 +1,5 @@
 <?php
-namespace Drupal\at_base\Config;
+namespace Drupal\go1_base\Config;
 
 class NotFoundException extends \Exception {
 }

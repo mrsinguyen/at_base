@@ -1,5 +1,5 @@
 <?php
-namespace Drupal\at_base\Helper\Content_Render;
+namespace Drupal\go1_base\Helper\Content_Render;
 
 /**
  * @todo  Doc & Test for $data['before'], $data['after']
@@ -48,7 +48,7 @@ class Process {
 
   private function processForm() {
     if (isset($this->data['form'])) {
-      $args = array('at_form', $this->data['form']);
+      $args = array('go1_form', $this->data['form']);
       $args[] = isset($this->data['form arguments']) ? $this->data['form arguments'] : array();
       return call_user_func_array('drupal_get_form', $args);
     }
@@ -92,16 +92,16 @@ class Process {
    * @param string $tpl
    */
   private function __templateSingle($tpl) {
-    $tpl = at_container('helper.real_path')->get($tpl);
-    return at_container('twig')->render($tpl, $this->args);
+    $tpl = go1_container('helper.real_path')->get($tpl);
+    return go1_container('twig')->render($tpl, $this->args);
   }
 
   private function __templateMultiple($tpls) {
     if (is_array($tpls)) {
       foreach ($tpls as $tpl) {
-        $file = at_container('helper.real_path')->get($tpl);
+        $file = go1_container('helper.real_path')->get($tpl);
         if (is_file($file)) {
-          return at_container('twig')->render($file, $this->args);
+          return go1_container('twig')->render($file, $this->args);
         }
       }
 
@@ -117,7 +117,7 @@ class Process {
 
     if (!empty($k)) {
       $tpl = $this->data[$k];
-      return trim(at_container('twig_string')->render($tpl, $this->args));
+      return trim(go1_container('twig_string')->render($tpl, $this->args));
     }
   }
 }

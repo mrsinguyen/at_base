@@ -1,8 +1,8 @@
 <?php
-namespace Drupal\at_base\Twig;
+namespace Drupal\go1_base\Twig;
 
-use \Drupal\at_base\Twig\Filters as Twig_Filters;
-use \Drupal\at_base\Twig\Functions as Twig_Functions;
+use \Drupal\go1_base\Twig\Filters as Twig_Filters;
+use \Drupal\go1_base\Twig\Functions as Twig_Functions;
 
 /**
  * Twig extensions, collection of filters, functions, … for Drupal site.
@@ -11,20 +11,20 @@ use \Drupal\at_base\Twig\Functions as Twig_Functions;
  */
 class Extension extends \Twig_Extension {
   public function getName() {
-    return 'AT Base';
+    return 'GO1 Base';
   }
 
   function getFilters() {
-    $return = at_cache('at:twig:fts', function() {
-      return at_id(new Filter_Fetcher())->fetch();
+    $return = go1_cache('at:twig:fts', function() {
+      return go1_id(new Filter_Fetcher())->fetch();
     });
 
     return array_merge($return, $this->getMagicItems('Twig_SimpleFilter'));
   }
 
   function getFunctions() {
-    $return = at_cache('at:twig:fns', function() {
-      return at_id(new Function_Fetcher())->fetch();
+    $return = go1_cache('at:twig:fns', function() {
+      return go1_id(new Function_Fetcher())->fetch();
     });
 
     return array_merge($return, $this->getMagicItems('Twig_SimpleFunction'));
@@ -46,7 +46,7 @@ class Extension extends \Twig_Extension {
     $items = array();
 
     // fn__*
-    $items[] = at_newv($base_class, array(
+    $items[] = go1_newv($base_class, array(
       'fn__*', function () {
         $args = func_get_args();
         $name = array_shift($args);
@@ -55,7 +55,7 @@ class Extension extends \Twig_Extension {
     ));
 
     // *__class__*
-    $items[] = at_newv($base_class, array(
+    $items[] = go1_newv($base_class, array(
       '*__class__*', function ($class, $method, $args = array()) {
         if ('ns_' === substr($class, 0, 3)) {
           $class = str_replace('__', '\\', substr($class, 3));
@@ -65,12 +65,12 @@ class Extension extends \Twig_Extension {
     ));
 
     // *__obj__*
-    $items[] = at_newv($base_class, array(
+    $items[] = go1_newv($base_class, array(
       '*__obj__*', function ($class, $method, $args = array()) {
         if ('ns_' === substr($class, 0, 3)) {
           $class = str_replace('__', '\\', substr($class, 3));
         }
-        return at_newv($class, is_array($args) ? $args : array($args))->{$method}();
+        return go1_newv($class, is_array($args) ? $args : array($args))->{$method}();
       }
     ));
 

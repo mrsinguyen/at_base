@@ -1,6 +1,6 @@
 <?php
 
-namespace Drupal\at_base\Twig\Filters;
+namespace Drupal\go1_base\Twig\Filters;
 
 /**
  * Handler for drupalEntity Twig filter.
@@ -58,8 +58,8 @@ class Entity {
   }
 
   private function renderTemplate() {
-    $path = at_container('helper.real_path')->get($this->options['template']);
-    return at_container('twig')->render(
+    $path = go1_container('helper.real_path')->get($this->options['template']);
+    return go1_container('twig')->render(
       $path,
       array(
         'entity_type' => $this->entity_type,

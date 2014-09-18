@@ -50,6 +50,6 @@
         "symfony/expression-language": "2.4.*"
     },
     "autoload": {
-        "psr-4": { "Drupal\\at_base\\": "lib" }
+        "psr-4": { "Drupal\\go1_base\\": "lib" }
     }
 }

@@ -1,5 +1,5 @@
 <?php
-namespace Drupal\at_base\Helper\Test;
+namespace Drupal\go1_base\Helper\Test;
 
 class Database {
   static $log;

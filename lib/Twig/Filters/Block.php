@@ -1,6 +1,6 @@
 <?php
 
-namespace Drupal\at_base\Twig\Filters;
+namespace Drupal\go1_base\Twig\Filters;
 
 /**
  * Callback for drupalBlock filter.
@@ -73,10 +73,10 @@ class Block {
       throw new \Exception('Invalid module');
     }
 
-    // Case of modules which use at_base to define the blocks
+    // Case of modules which use go1_base to define the blocks
     if (!function_exists("{$module}_block_info")) {
       $delta = "{$module}|{$delta}";
-      $module = 'at_base';
+      $module = 'go1_base';
     }
 
     return array($module, $delta);

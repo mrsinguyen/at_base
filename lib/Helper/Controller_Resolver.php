@@ -1,5 +1,5 @@
 <?php
-namespace Drupal\at_base\Helper;
+namespace Drupal\go1_base\Helper;
 
 /**
  * helper.controller.resolver service.
@@ -12,7 +12,7 @@ namespace Drupal\at_base\Helper;
  *  - pair of object, method
  *  - Twig string
  *
- * @see Drupal\at_base\Tests\CommonTest::testControllerRevoler()
+ * @see Drupal\go1_base\Tests\CommonTest::testControllerRevoler()
  */
 class Controller_Resolver {
   private $def;
@@ -61,7 +61,7 @@ class Controller_Resolver {
     $is_twig_1 = FALSE !== strpos($this->def, '{{');
     $is_twig_2 = FALSE !== strpos($this->def, '{%');
     if ($is_twig_1 || $is_twig_2) {
-      $obj = at_container('twig_controller');
+      $obj = go1_container('twig_controller');
       $obj->setTemplate($this->def);
       return array($obj, 'render');
     }
@@ -71,7 +71,7 @@ class Controller_Resolver {
     // definition is service_name:service_method
     if (strpos($this->def, ':') !== FALSE) {
       list($service, $method) = explode(':', $this->def, 2);
-      return array(at_container($service), $method);
+      return array(go1_container($service), $method);
     }
   }
 

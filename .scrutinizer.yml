@@ -2,7 +2,7 @@ filter:
     excluded_paths:
         - 'vendor/*'
         - 'tests/*'
-        - 'lib/Drupal/at_base/Tests/*'
+        - 'lib/Drupal/go1_base/Tests/*'
         - 'app/*'
         - 'bin/*'
         - 'library/*'
@@ -19,7 +19,7 @@ tools:
             excluded_paths:
                 - 'vendor/*'
                 - 'tests/*' 
-                - 'lib/Drupal/at_base/Tests/*'
+                - 'lib/Drupal/go1_base/Tests/*'
                 - 'app/*'
                 - 'bin/*'
                 - 'library/*'
@@ -45,7 +45,7 @@ tools:
             excluded_paths:
                 - 'vendor/*'
                 - 'tests/*'
-                - 'lib/Drupal/at_base/Tests/*'
+                - 'lib/Drupal/go1_base/Tests/*'
                 - 'app/*'
                 - 'bin/*'
                 - 'library/*'

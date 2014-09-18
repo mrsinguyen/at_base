@@ -1,5 +1,5 @@
 <?php
-namespace Drupal\atest_route\Controller;
+namespace Drupal\go1test_route\Controller;
 
 class HelloController {
   public function helloAction($name) {

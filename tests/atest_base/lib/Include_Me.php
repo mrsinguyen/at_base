@@ -1,4 +1,4 @@
 <?php
 
-class ATest_Base_Include_Me {
+class GO1est_Base_Include_Me {
 }

@@ -1,6 +1,6 @@
 <?php
 
-namespace Drupal\at_base\Icon;
+namespace Drupal\go1_base\Icon;
 
 abstract class FontElloBase implements IconSourceInterface {
   public function getName() {
@@ -8,12 +8,12 @@ abstract class FontElloBase implements IconSourceInterface {
   }
 
   public function getIconConfig($set_name, $icon_name) {
-    if ($v = at_container('kv', 'aticon.fontello')->get("{$set_name}/{$icon_name}")) {
+    if ($v = go1_container('kv', 'aticon.fontello')->get("{$set_name}/{$icon_name}")) {
       return $v;
     }
 
     // Fetch and save config
-    at_container('kv', 'aticon.fontello')
+    go1_container('kv', 'aticon.fontello')
       ->set("{$set_name}/{$icon_name}", $config = $this->fetchIconConfig($set_name, $icon_name));
 
     return $config;
@@ -36,23 +36,23 @@ abstract class FontElloBase implements IconSourceInterface {
 
   public function getIconSets() {
     $sets = array();
-    foreach (file_scan_directory(at_library('fontello', NULL, FALSE) . 'src', '/config.yml$/') as $file => $info) {
+    foreach (file_scan_directory(go1_library('fontello', NULL, FALSE) . 'src', '/config.yml$/') as $file => $info) {
       $sets[] = basename(dirname($file));
     }
     return $sets;
   }
 
   public function getIconSetPath($set_name) {
-    return at_library('fontello', NULL, FALSE) . "src/{$set_name}/config.yml";
+    return go1_library('fontello', NULL, FALSE) . "src/{$set_name}/config.yml";
   }
 
   public function getIconSetConfig($set_name) {
-    if ($v = at_container('kv', 'aticon.fontello.set')->get($set_name)) {
+    if ($v = go1_container('kv', 'aticon.fontello.set')->get($set_name)) {
       return $v;
     }
 
     // fetch and save set config
-    at_container('kv', 'aticon.fontello.set')->set($set_name, $config = $this->fetchIconSetConfig($set_name));
+    go1_container('kv', 'aticon.fontello.set')->set($set_name, $config = $this->fetchIconSetConfig($set_name));
 
     return $config;
   }
@@ -85,7 +85,7 @@ abstract class FontElloBase implements IconSourceInterface {
    * @return type
    */
   public function cacheFontPath($config_path, $name) {
-    \at_fn::at_cache("atfont:font_path:{$name}", function() use ($config_path) {
+    \go1_fn::go1_cache("atfont:font_path:{$name}", function() use ($config_path) {
       global $base_root;
       return $base_root . '/' . str_replace('config.yml', '', $config_path) . 'font';
     });
@@ -99,7 +99,7 @@ abstract class FontElloBase implements IconSourceInterface {
    * @return type
    */
   public function cacheFontName($config, $name) {
-    \at_fn::at_cache("atfont:font_name:{$name}", function() use ($config) {
+    \go1_fn::go1_cache("atfont:font_name:{$name}", function() use ($config) {
       return $config['font']['fontname'];
     });
   }
@@ -139,7 +139,7 @@ abstract class FontElloBase implements IconSourceInterface {
 
     // Add library.
     if (!$included) {
-      $fontello_library_path = at_library('fontello', NULL, FALSE);
+      $fontello_library_path = go1_library('fontello', NULL, FALSE);
       $css[] = $fontello_library_path . 'assets/icons/src/css/animation.css';
       $css[] = array(
         'data' => $fontello_library_path . 'assets/icons/src/css/icons-ie7.css',
@@ -169,7 +169,7 @@ abstract class FontElloBase implements IconSourceInterface {
       $included[$font_name] = TRUE;
 
       $css[] = array(
-        'data' => at_container('twig')->render('@at_base/templates/fontello.css.twig', array(
+        'data' => go1_container('twig')->render('@go1_base/templates/fontello.css.twig', array(
           'name' => $font_name,
           'path' => $base_path . $font_path,
         )),

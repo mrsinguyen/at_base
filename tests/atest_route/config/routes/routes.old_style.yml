@@ -1,22 +1,22 @@
 routes:
   # @todo: Test me
-  'atest_route/drupal/%user':
+  'go1test_route/drupal/%user':
     title: User
     access arguments: ['access content']
-    page callback: atest_route_user_view_callback
-    page arguments: ['Andy Truong', 2]
+    page callback: go1test_route_user_view_callback
+    page arguments: ['GO1', 2]
 
-  atest_route/drupal:
+  go1test_route/drupal:
     title: Hello
     title callback: t
     description: 'Description for the page'
-    page callback: atest_route_page_callback
-    page arguments: ['Andy Truong']
+    page callback: go1test_route_page_callback
+    page arguments: ['GO1']
     access callback: user_access
     access arguments: ['access content']
     theme callback: trim # function_to_detect_theme_name
     theme arguments: [seven]
-    file: atest_route.pages.inc
+    file: go1test_route.pages.inc
     weight: 0
     menu_name: navigation
     expanded: TRUE

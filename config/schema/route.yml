@@ -1,5 +1,5 @@
 # @todo
-#   This is validate manually in Drupal\at_base\Route\RouteToMenu::validate()
+#   This is validate manually in Drupal\go1_base\Route\RouteToMenu::validate()
 #   not yet smart enough to auto validation like Drupal 8.
 type: mapping
 require_one_of:
@@ -30,7 +30,7 @@ mapping:
   type:             { type: 'integer'      }
 
   # -------
-  # at_base's properties
+  # go1_base's properties
   # -------
   # @todo: string or list<string>
   #     or provide templates: { type: list<string> }

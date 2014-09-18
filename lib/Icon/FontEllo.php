@@ -1,5 +1,5 @@
 <?php
-namespace Drupal\at_base\Icon;
+namespace Drupal\go1_base\Icon;
 
 class FontEllo extends FontElloBase {
   /**
@@ -8,7 +8,7 @@ class FontEllo extends FontElloBase {
    * @param type $name
    *   The name of icon in fontello.
    *   Browse available icons at http://fontello.com/
-   * @return \Drupal\at_base\Icon\Icon
+   * @return \Drupal\go1_base\Icon\Icon
    *   Contain enough information to generate icon tag.
    */
   public function get($id) {

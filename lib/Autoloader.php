@@ -1,7 +1,7 @@
 <?php
-namespace Drupal\at_base;
+namespace Drupal\go1_base;
 
-at_id(new Autoloader('Drupal'))->register();
+go1_id(new Autoloader('Drupal'))->register();
 
 /**
  * Modified version of SplClassLoader (https://gist.github.com/jwage/221634)

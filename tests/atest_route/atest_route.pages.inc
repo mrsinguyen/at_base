@@ -1,5 +1,5 @@
 <?php
 
-function atest_route_page_callback($name) {
+function go1test_route_page_callback($name) {
   return "Hello {$name}";
 }

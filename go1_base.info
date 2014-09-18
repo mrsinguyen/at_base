@@ -1,0 +1,9 @@
+name = GO1 Base
+version = 7.x-2.0-dev
+description = "Provide helper functions for go1_* modules"
+core = 7.x
+package = GO1
+
+dependencies[] = block
+dependencies[] = entity
+dependencies[] = views

@@ -1,5 +1,5 @@
 <?php
-namespace Drupal\at_base\TypedData\DataTypes;
+namespace Drupal\go1_base\TypedData\DataTypes;
 
 abstract class Base {
   protected $def;

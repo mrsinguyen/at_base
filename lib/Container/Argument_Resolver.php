@@ -1,6 +1,6 @@
 <?php
 
-namespace Drupal\at_base\Container;
+namespace Drupal\go1_base\Container;
 
 /**
  * Class to replace array of tokens to real values.
@@ -24,12 +24,12 @@ class Argument_Resolver
         $args = $calls = array();
 
         if (!empty($def['file'])) {
-            require at_container('helper.real_path')->get($def['file']);
+            require go1_container('helper.real_path')->get($def['file']);
             unset($def['file']);
         }
 
         if (!empty($def['autoload'])) {
-            at_container('autoloader')->register($def['autoload']);
+            go1_container('autoloader')->register($def['autoload']);
             unset($def['autoload']);
         }
 
@@ -98,7 +98,7 @@ class Argument_Resolver
     private function detectConfig($item) {
         if ('%' === substr($item, 0, 1)) {
             list($module, $id, $key) = explode(':', substr($item, 1), 3);
-            return at_config($module, $id)->get($key);
+            return go1_config($module, $id)->get($key);
         }
     }
 
@@ -107,7 +107,7 @@ class Argument_Resolver
      */
     private function detectService($item) {
         if ('@' === substr($item, 0, 1)) {
-            return at_container(substr($item, 1));
+            return go1_container(substr($item, 1));
         }
     }
 }

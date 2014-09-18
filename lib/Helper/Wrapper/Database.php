@@ -1,5 +1,5 @@
 <?php
-namespace Drupal\at_base\Helper\Wrapper;
+namespace Drupal\go1_base\Helper\Wrapper;
 
 class Database {
   /**

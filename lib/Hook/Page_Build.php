@@ -1,7 +1,7 @@
 <?php
-namespace Drupal\at_base\Hook;
+namespace Drupal\go1_base\Hook;
 
-use Drupal\at_base\Hook\BlockView;
+use Drupal\go1_base\Hook\BlockView;
 
 /**
  * Details for hook_page_build().
@@ -89,7 +89,7 @@ class Page_Build {
       $config
     );
     return (object)array(
-      'module' => 'at_base',
+      'module' => 'go1_base',
       'delta' => "dyn_{$key}",
       'region' => '',
       'title' => '',
@@ -108,10 +108,10 @@ class Page_Build {
   private function loadTraditionBlock($config) {
     list($module, $delta) = explode(':', is_string($config) ? $config : $config[0]);
 
-    // Case of modules which use at_base to define the blocks
+    // Case of modules which use go1_base to define the blocks
     if (!function_exists("{$module}_block_info")) {
       $delta = "{$module}|{$delta}";
-      $module = 'at_base';
+      $module = 'go1_base';
     }
 
     if ($block = block_load($module, $delta)) {

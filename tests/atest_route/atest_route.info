@@ -1,6 +1,6 @@
-name = ATest Route
+name = GO1est Route
 core = 7.x
 
 hidden = TRUE
 
-dependencies[] = at_base
+dependencies[] = go1_base

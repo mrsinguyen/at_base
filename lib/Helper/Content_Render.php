@@ -1,28 +1,28 @@
 <?php
 
-namespace Drupal\at_base\Helper;
+namespace Drupal\go1_base\Helper;
 
-use Drupal\at_base\Helper\Content_Render\CacheHandler_Interface;
-use Drupal\at_base\Helper\Content_Render\Process;
+use Drupal\go1_base\Helper\Content_Render\CacheHandler_Interface;
+use Drupal\go1_base\Helper\Content_Render\Process;
 
 /**
  * Helper class for rendering data:
  *
  *  $data = array('template_string' => $template_string, 'variables' => $variables, 'attached' => $attached);
- *  return at_container('helper.content_render')
+ *  return go1_container('helper.content_render')
  *    ->setData($data)
  *    ->render()
  *  ;
  *
  *
- *  $data = array('controller' => array('\Drupal\atest_base\Controller\Sample', 'renderAction'));
- *  return at_container('helper.content_render')
+ *  $data = array('controller' => array('\Drupal\go1test_base\Controller\Sample', 'renderAction'));
+ *  return go1_container('helper.content_render')
  *    ->setData($data)
  *    ->render()
  *  ;
  *
- * @see  \Drupal\at_base\Controller\DefaultController
- * @see  \Drupal\at_base\Hook\BlockView
+ * @see  \Drupal\go1_base\Controller\DefaultController
+ * @see  \Drupal\go1_base\Hook\BlockView
  * @see  \At_Twig_TestCase::testContentRender()
  */
 class Content_Render {
@@ -81,7 +81,7 @@ class Content_Render {
     }
 
     $args = $this->getVariables();
-    $return = at_id(new Process($this->data, $args))->execute();
+    $return = go1_id(new Process($this->data, $args))->execute();
 
     // Attach assets
     if (is_array($this->data) && !empty($this->data['attached'])) {
@@ -135,7 +135,7 @@ class Content_Render {
 
       $dyn = is_string($v);
       $dyn = $dyn || (($k = array_keys($v)) && is_numeric($k[0]));
-      if ($dyn && $callback = at_container('helper.controller.resolver')->get($v)) {
+      if ($dyn && $callback = go1_container('helper.controller.resolver')->get($v)) {
         $this->data['variables'] = call_user_func($callback);
         return $this->getStaticVariables();
       }
@@ -146,7 +146,7 @@ class Content_Render {
     foreach (array_keys($this->data['attached']) as $type) {
       foreach ($this->data['attached'][$type] as $k => $item) {
         if (is_string($item)) {
-          $this->data['attached'][$type][$k] = at_container('helper.real_path')->get($item, FALSE);
+          $this->data['attached'][$type][$k] = go1_container('helper.real_path')->get($item, FALSE);
         }
       }
     }

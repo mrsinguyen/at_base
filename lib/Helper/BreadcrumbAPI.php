@@ -1,5 +1,5 @@
 <?php
-namespace Drupal\at_base\Helper;
+namespace Drupal\go1_base\Helper;
 
 /**
  * Callback for breadcrumb_api service.
@@ -31,7 +31,7 @@ class BreadcrumbAPI {
    *         function:  my_fn  # <-- dynamic breadcrumbs, rendered by a controller.
    *         arguments: [argument_1, argument_2, argument_3]
    *
-   * @see at_base_entity_view()
+   * @see go1_base_entity_view()
    * @param  \stdClass $entity
    * @param  string $type
    * @param  string $view_mode
@@ -39,21 +39,21 @@ class BreadcrumbAPI {
    * @return null
    */
   public function checkEntityConfig($entity, $type, $view_mode, $langcode) {
-    $cache_options = array('id' => "atbc:{$type}:". at_fn('entity_bundle', $type, $entity) .":{$view_mode}");
+    $cache_options = array('id' => "atbc:{$type}:". go1_fn('entity_bundle', $type, $entity) .":{$view_mode}");
     $cache_callback = array($this, 'fetchEntityConfig');
     $cache_arguments = func_get_args();
 
-    if ($config = at_cache($cache_options, $cache_callback, $cache_arguments)) {
+    if ($config = go1_cache($cache_options, $cache_callback, $cache_arguments)) {
       $config['context'] = array('type' => 'entity', 'arguments' => func_get_args());
       $this->set($config);
     }
   }
 
   public function fetchEntityConfig($entity, $type, $view_mode, $langcode) {
-    foreach (at_modules('at_base', 'breadcrumb') as $module) {
-      $config = at_config($module, 'breadcrumb')->get('breadcrumb');
+    foreach (go1_modules('go1_base', 'breadcrumb') as $module) {
+      $config = go1_config($module, 'breadcrumb')->get('breadcrumb');
 
-      $bundle = at_fn('entity_bundle', $type, $entity);
+      $bundle = go1_fn('entity_bundle', $type, $entity);
       if (isset($config['entity'][$type][$bundle][$view_mode])) {
         return $config['entity'][$type][$bundle][$view_mode];
       }
@@ -61,10 +61,10 @@ class BreadcrumbAPI {
   }
 
   public function checkPathConfig() {
-    $path_config = at_cache('atbc:paths', function(){
+    $path_config = go1_cache('atbc:paths', function(){
       $items = array();
-      foreach (at_modules('at_base', 'breadcrumb') as $module) {
-        $config = at_config($module, 'breadcrumb')->get('breadcrumb');
+      foreach (go1_modules('go1_base', 'breadcrumb') as $module) {
+        $config = go1_config($module, 'breadcrumb')->get('breadcrumb');
         if (!empty($config['paths'])) {
           $items = array_merge($items, $config['paths']);
         }
@@ -73,7 +73,7 @@ class BreadcrumbAPI {
     });
 
     // Convert the Drupal path to lowercase
-    $current_path = drupal_strtolower(at_fn('drupal_get_path_alias', at_fn('request_path')));
+    $current_path = drupal_strtolower(go1_fn('drupal_get_path_alias', go1_fn('request_path')));
 
     foreach ($path_config as $path => $config) {
       if (drupal_match_path($current_path, $path)) {
@@ -93,11 +93,11 @@ class BreadcrumbAPI {
       $old_weight = isset($_config['weight']) ? $_config['weight'] : 0;
       $new_weight = isset($config['weight'])  ? $config['weight']  : 0;
       if ($new_weight <= $old_weight) {
-        at_container('container')->offsetSet('breadcrumb', $config);
+        go1_container('container')->offsetSet('breadcrumb', $config);
       }
     }
     else {
-      at_container('container')->offsetSet('breadcrumb', $config);
+      go1_container('container')->offsetSet('breadcrumb', $config);
     }
   }
 
@@ -107,13 +107,13 @@ class BreadcrumbAPI {
    * @return array
    */
   public function get() {
-    if (at_container('container')->offsetExists('breadcrumb')) {
-      return at_container('breadcrumb');
+    if (go1_container('container')->offsetExists('breadcrumb')) {
+      return go1_container('breadcrumb');
     }
   }
 
   /**
-   * @see at_base_page_build()
+   * @see go1_base_page_build()
    */
   public function pageBuild() {
     $this->checkPathConfig();
@@ -123,7 +123,7 @@ class BreadcrumbAPI {
 
       // User can send direct breadcrumb structure, or use a callback to build it.
       if (empty($bc)) {
-        $bc = at_container('helper.content_render')->render($config);
+        $bc = go1_container('helper.content_render')->render($config);
       }
 
       $args = isset($config['context']['arguments']) ? $config['context']['arguments'] : array();
@@ -146,10 +146,10 @@ class BreadcrumbAPI {
 
     foreach ($bc as &$item) {
       foreach ($item as &$item_e) {
-        $item_e = at_fn('token_replace', $item_e, $token_data);
+        $item_e = go1_fn('token_replace', $item_e, $token_data);
       }
 
-      $item = count($item) == 2 ? at_fn('l', $item[0], $item[1]) : reset($item);
+      $item = count($item) == 2 ? go1_fn('l', $item[0], $item[1]) : reset($item);
     }
 
     drupal_set_breadcrumb($bc);

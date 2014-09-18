@@ -1,5 +1,5 @@
 <?php
-namespace Drupal\atest_base;
+namespace Drupal\go1test_base;
 
 class Dynamic_Arguments {
   private $dyn_param;

@@ -1,6 +1,6 @@
 <?php
 
-function atest_route_user_view_callback($name, $account) {
+function go1test_route_user_view_callback($name, $account) {
   drupal_set_title($name);
   $return = user_view($account);
   return $return;

@@ -1,15 +1,15 @@
 routes:
-  atest_route/template:
+  go1test_route/template:
     title: Magic template
     access arguments: ['access content']
-    template: '@atest_route/templates/hello.html.twig'
-    variables: { name: 'Andy Truong' }
+    template: '@go1test_route/templates/hello.html.twig'
+    variables: { name: 'GO1' }
 
   # Multiple template allow theme to override the template
-  atest_route/multiple-template:
+  go1test_route/multiple-template:
     title: Magic template
     access arguments: ['access content']
     template:
-      - '@atest_route/templates/hello.html.twig'
-      - '@atest_route/templates/unreal-template.html.twig'
-    variables: { name: Andy Truong }
+      - '@go1test_route/templates/hello.html.twig'
+      - '@go1test_route/templates/unreal-template.html.twig'
+    variables: { name: GO1 }

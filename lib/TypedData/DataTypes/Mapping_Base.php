@@ -1,5 +1,5 @@
 <?php
-namespace Drupal\at_base\TypedData\DataTypes;
+namespace Drupal\go1_base\TypedData\DataTypes;
 
 abstract class Mapping_Base extends Base {
   protected $allow_extra_properties = TRUE;
@@ -31,7 +31,7 @@ abstract class Mapping_Base extends Base {
 
     if (isset($this->def['mapping'][$k]['type'])) {
       $def = array('type' => $this->def['mapping'][$k]['type']);
-      $data = at_data($def, $v);
+      $data = go1_data($def, $v);
       $return = $data->getValue();
     }
 

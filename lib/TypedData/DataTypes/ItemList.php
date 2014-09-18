@@ -1,5 +1,5 @@
 <?php
-namespace Drupal\at_base\TypedData\DataTypes;
+namespace Drupal\go1_base\TypedData\DataTypes;
 
 class ItemList extends Base {
   /**
@@ -40,7 +40,7 @@ class ItemList extends Base {
   }
 
   private function validateElementType(&$error = NULL) {
-    $data = at_data(array('type' => $this->element_type));
+    $data = go1_data(array('type' => $this->element_type));
 
     foreach ($this->value as $k => $v) {
       $data->setValue($v);

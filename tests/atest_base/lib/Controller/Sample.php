@@ -1,6 +1,6 @@
 <?php
 
-namespace Drupal\atest_base\Controller;
+namespace Drupal\go1test_base\Controller;
 
 class Sample {
   public function renderAction() {

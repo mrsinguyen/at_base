@@ -1,6 +1,6 @@
 <?php
 
-namespace Drupal\at_base\Twig\Filters;
+namespace Drupal\go1_base\Twig\Filters;
 
 /**
  * Base class for drupalView twig filter, provide basic get/set methods.
@@ -68,7 +68,7 @@ abstract class Views_Base {
   }
 
   public function setTemplate($template) {
-    $this->template = at_container('helper.real_path')->get($template);
+    $this->template = go1_container('helper.real_path')->get($template);
   }
 
   public function setPager($pager) {

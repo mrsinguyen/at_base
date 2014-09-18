@@ -1,6 +1,6 @@
-name = ATest Config
-description = "Fixture for at_config.module"
+name = GO1est Config
+description = "Fixture for go1_config.module"
 version = 7.x-1.0-dev
 core = 7.x
 
-dependencies[] = at_base
+dependencies[] = go1_base

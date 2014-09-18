@@ -1,20 +1,20 @@
 <?php
-namespace Drupal\at_base;
+namespace Drupal\go1_base;
 
-use Drupal\at_base\Container\Service_Resolver;
-use Drupal\at_base\Container\Argument_Resolver;
-use Drupal\at_base\Helper\Config_Fetcher;
-use Drupal\at_base\Helper\Wrapper\Database as DB_Wrapper;
-use Drupal\at_base\Helper\Wrapper\Cache as Cache_Wrapper;
-use Drupal\at_base\Config\Resolver as Config_Resolver;
-use Drupal\at_base\Config\Config;
+use Drupal\go1_base\Container\Service_Resolver;
+use Drupal\go1_base\Container\Argument_Resolver;
+use Drupal\go1_base\Helper\Config_Fetcher;
+use Drupal\go1_base\Helper\Wrapper\Database as DB_Wrapper;
+use Drupal\go1_base\Helper\Wrapper\Cache as Cache_Wrapper;
+use Drupal\go1_base\Config\Resolver as Config_Resolver;
+use Drupal\go1_base\Config\Config;
 
-require_once at_library('pimple') . '/lib/Pimple.php';
+require_once go1_library('pimple') . '/lib/Pimple.php';
 
 /**
  * Service Container/Locator.
  *
- * @see  https://github.com/andytruong/at_base/wiki/7.x-2.x-service-container
+ * @see  https://github.com/mrsinguyen/go1_base/wiki/7.x-2.x-service-container
  */
 class Container extends \Pimple {
   public function __construct() {
@@ -80,7 +80,7 @@ class Container extends \Pimple {
    * @return array
    */
   public function find($tag, $return = 'service_name') {
-    $defs = at_cache("atc:tag:{$tag}, + 1 year", array($this['service.resolver'], 'fetchDefinitions'), array($tag));
+    $defs = go1_cache("atc:tag:{$tag}, + 1 year", array($this['service.resolver'], 'fetchDefinitions'), array($tag));
 
     if ($return === 'service_name') {
       return $defs;

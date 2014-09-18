@@ -14,16 +14,16 @@ twig_filters:
   _filter_autop: _filter_autop
 
   # Example: {{ 'system:powered-by'|drupalBlock }}
-  __drupalBlock: [\Drupal\at_base\Twig\Filters\Block, render]
+  __drupalBlock: [\Drupal\go1_base\Twig\Filters\Block, render]
 
   # Example: {{ 'user:1'|drupalEntity }}
-  __drupalEntity: [\Drupal\at_base\Twig\Filters\Entity, render]
+  __drupalEntity: [\Drupal\go1_base\Twig\Filters\Entity, render]
 
   # Examples:
   #   {{ 'viewName'|drupalView }}
   #   {{ 'viewName'|drupalView('default') }}
   #   {{ 'viewName'|drupalView('default', arg1, arg2, arg3) }}
-  #   {{ 'viewName'|drupalView({template: '@at_base/templates/views_view.html.twig'}) }}
+  #   {{ 'viewName'|drupalView({template: '@go1_base/templates/views_view.html.twig'}) }}
   #   {{ 'viewName'|drupalView({
   #           template: '…'
   #           , display_id: 'default'
@@ -54,7 +54,7 @@ twig_filters:
   #           , offset: 0
   #      })
   #   }}
-  __drupalView: [\Drupal\at_base\Twig\Filters\Views, render]
+  __drupalView: [\Drupal\go1_base\Twig\Filters\Views, render]
 
   # ---------------------
   # Contributed modules
@@ -66,8 +66,8 @@ twig_filters:
   dsm: dsm
 
   # ---------------------
-  # at_base module
+  # go1_base module
   # ---------------------
-  # Example: {{ "%module:%id:%key"|at_config }}
-  __at_config: [\Drupal\at_base\Twig\Filters\ATConfig, render]
-  __cache: [\Drupal\at_base\Twig\Filters\Cache_Filter, render]
+  # Example: {{ "%module:%id:%key"|go1_config }}
+  __go1_config: [\Drupal\go1_base\Twig\Filters\GO1Config, render]
+  __cache: [\Drupal\go1_base\Twig\Filters\Cache_Filter, render]

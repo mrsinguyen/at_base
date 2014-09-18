@@ -1,2 +1,2 @@
-dynamic_param_1: 'atest_base'
-dynamic_service_1: '@atest_base.service_1'
+dynamic_param_1: 'go1test_base'
+dynamic_service_1: '@go1test_base.service_1'

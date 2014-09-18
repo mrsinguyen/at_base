@@ -1,5 +1,5 @@
 <?php
-namespace Drupal\at_base\Cache\Warming;
+namespace Drupal\go1_base\Cache\Warming;
 
 class Tag_Discover {
   private $event_name;
@@ -9,8 +9,8 @@ class Tag_Discover {
   }
 
   public function tags() {
-    foreach (at_modules('at_base', 'cache_warming') as $module) {
-      if ($data = at_config($module, 'cache_warming')->get('tags')) {
+    foreach (go1_modules('go1_base', 'cache_warming') as $module) {
+      if ($data = go1_config($module, 'cache_warming')->get('tags')) {
         if (isset($data[$this->event_name])) {
           return $data[$this->event_name];
         }

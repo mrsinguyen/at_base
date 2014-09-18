@@ -1,5 +1,5 @@
 <?php
-namespace Drupal\at_base\Icon;
+namespace Drupal\go1_base\Icon;
 
 interface IconSourceInterface {
   /**
@@ -12,7 +12,7 @@ interface IconSourceInterface {
    * Get Icon instance with information to generate icon tag.
    *
    * @param string $css_code
-   * @return \Drupal\at_base\Icon\Icon
+   * @return \Drupal\go1_base\Icon\Icon
    */
   public function get($css_code);
 

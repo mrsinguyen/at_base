@@ -1,10 +1,10 @@
 <?php
-namespace Drupal\at_base\Helper;
+namespace Drupal\go1_base\Helper;
 
 /**
  * Usage:
  * @code
- *   at_id(new Drupal\at_base\Helper\SubRequest('atest_theming/users'))->request();
+ *   go1_id(new Drupal\go1_base\Helper\SubRequest('go1test_theming/users'))->request();
  * @code
  */
 class SubRequest {

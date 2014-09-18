@@ -1,6 +1,6 @@
-name = atest2_base
+name = go1test2_base
 package = Testing
 core = 7.x
 hidden = TRUE
 
-dependencies[] = atest_base
+dependencies[] = go1test_base

@@ -1,5 +1,5 @@
 <?php
-namespace Drupal\at_base\Config;
+namespace Drupal\go1_base\Config;
 
 class Config {
   /**
@@ -77,11 +77,11 @@ class Config {
   private function fetchData() {
     $resolver = $this->resolver;
 
-    $options = array('id' => "ATConfig:{$this->module}:{$this->id}");
+    $options = array('id' => "GO1Config:{$this->module}:{$this->id}");
     $options['ttl'] = '+ 1 year';
     $options['tags'] = array('at-config');
 
-    $this->config_data = at_cache($options, function() use ($resolver) {
+    $this->config_data = go1_cache($options, function() use ($resolver) {
       return $resolver->fetchData();
     });
   }

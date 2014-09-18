@@ -1,5 +1,5 @@
 <?php
-namespace Drupal\at_base\Hook;
+namespace Drupal\go1_base\Hook;
 
 class BlockView {
   private $module;
@@ -22,7 +22,7 @@ class BlockView {
 
   public function view () {
     $info = $this->getInfo();
-    $render = at_container('helper.content_render');
+    $render = go1_container('helper.content_render');
 
     $block = array();
     foreach (array('subject', 'content') as $k) {
@@ -42,7 +42,7 @@ class BlockView {
       return $this->getDynamicInfo();
     }
 
-    $info = at_config($this->module, 'blocks')->get('blocks');
+    $info = go1_config($this->module, 'blocks')->get('blocks');
     if (!isset($info[$this->key])) {
       throw new \Exception("Invalid block: {$this->module}:{$this->key}");
     }

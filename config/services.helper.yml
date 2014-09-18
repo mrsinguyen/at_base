@@ -1,14 +1,14 @@
 services:
 
   helper.controller.resolver:
-    class: '\Drupal\at_base\Helper\Controller_Resolver'
+    class: '\Drupal\go1_base\Helper\Controller_Resolver'
 
   helper.content_render:
     reuse: false
-    class: 'Drupal\at_base\Helper\Content_Render'
+    class: 'Drupal\go1_base\Helper\Content_Render'
 
   helper.real_path:
-    class: 'Drupal\at_base\Helper\Real_Path'
+    class: 'Drupal\go1_base\Helper\Real_Path'
 
   helper.timer:
-    class: 'Drupal\at_base\Helper\Timer'
+    class: 'Drupal\go1_base\Helper\Timer'

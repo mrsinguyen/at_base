@@ -1,12 +1,12 @@
 <?php
-namespace Drupal\at_base\Hook\Entity;
+namespace Drupal\go1_base\Hook\Entity;
 
 /**
  * This is helper class allow modules to use Twig template for rendering entity.
  *
  * To use this, in settings.php add this line:
  *
- *  define('AT_BASE_ENTITY_TEMPLATE', 1);
+ *  define('GO1_BASE_ENTITY_TEMPLATE', 1);
  *
  * Configure entity template to be used:
  *
@@ -76,14 +76,14 @@ class View_Alter {
 
       // Attach block if context block is empty
       if (!empty($config['blocks'][$theme])) {
-        if (!at_container('container')->offsetExists('page.blocks')) {
-          at_container('container')->offsetSet('page.blocks', $config['blocks'][$theme]);
+        if (!go1_container('container')->offsetExists('page.blocks')) {
+          go1_container('container')->offsetSet('page.blocks', $config['blocks'][$theme]);
         }
         unset($config['blocks']);
       }
 
       try {
-        return at_container('helper.content_render')->render($config);
+        return go1_container('helper.content_render')->render($config);
       }
       catch (\Exception $e) {
         watchdog_exception(WATCHDOG_CRITICAL, $e);
@@ -100,7 +100,7 @@ class View_Alter {
         '#view_mode' => $this->view_mode,
         '#language' => $this->build['#language'],
         '#contextual_links ' => !empty($this->build['#contextual_links']) ? $this->build['#contextual_links'] : NULL,
-        'at_base' => is_string($build) ? array('#markup' => $build) : $build,
+        'go1_base' => is_string($build) ? array('#markup' => $build) : $build,
         '#build' => $this->build,
       );
     }
@@ -111,17 +111,17 @@ class View_Alter {
    */
   public function getConfig() {
     $o = array(
-      'id' => "at_theming:entity_template:{$this->entity_type}:{$this->bundle}:{$this->view_mode}",
+      'id' => "go1_theming:entity_template:{$this->entity_type}:{$this->bundle}:{$this->view_mode}",
       'ttl' => '+ 1 year',
     );
-    return at_cache($o, array($this, 'fetchConfig'));
+    return go1_cache($o, array($this, 'fetchConfig'));
   }
 
   /**
    * Get cached render configuration for context.
    */
   public function fetchConfig() {
-    foreach (at_modules('at_base', 'entity_template') as $module) {
+    foreach (go1_modules('go1_base', 'entity_template') as $module) {
       if ($config = $this->fetchModuleConfig($module)) {
         return $config;
       }
@@ -129,7 +129,7 @@ class View_Alter {
   }
 
   private function fetchModuleConfig($module) {
-    $config = at_config($module, 'entity_template')->get('entity_templates');
+    $config = go1_config($module, 'entity_template')->get('entity_templates');
 
     foreach (array('entity_type', 'bundle', 'view_mode') as $k) {
       $config = isset($config[$this->{$k}])

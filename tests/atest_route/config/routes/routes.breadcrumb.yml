@@ -1,5 +1,5 @@
 routes:
-  atest_route/breadcrumb:
+  go1test_route/breadcrumb:
     title: Hello Blocks
     access arguments: ['access content']
     content: >

@@ -1,27 +1,27 @@
 <?php
 
-namespace Drupal\at_base;
+namespace Drupal\go1_base;
 
 /**
  * Callback for kv service.
  *
  * Mostly copied from Drupal\Core\KeyValueStore\DatabaseStorage
  */
-class KV extends \Drupal\at_base\KV\StorageBase {
+class KV extends \Drupal\go1_base\KV\StorageBase {
   /**
    * @var string
    */
   protected $table;
 
   /**
-   * @var \Drupal\at_base\Helper\Wrapper\Database
+   * @var \Drupal\go1_base\Helper\Wrapper\Database
    */
   protected $db;
 
-  public function __construct($collection, $table = 'at_kv') {
+  public function __construct($collection, $table = 'go1_kv') {
     $this->collection = $collection;
     $this->table = $table;
-    $this->db = at_container('wrapper.db');
+    $this->db = go1_container('wrapper.db');
   }
 
   public function getMultiple($keys) {

@@ -1,6 +1,6 @@
 <?php
 
-namespace Drupal\at_base\Twig\Filters;
+namespace Drupal\go1_base\Twig\Filters;
 
 /**
  * Callback for drupalView Twig filter.
@@ -76,6 +76,6 @@ class Views extends Views_Base {
 
     $vars = array('view' => $this->view);
     template_preprocess_views_view($vars);
-    return at_container('twig')->render($this->template, $vars);
+    return go1_container('twig')->render($this->template, $vars);
   }
 }

@@ -1,10 +1,10 @@
 <?php
-namespace Drupal\at_base\Hook;
+namespace Drupal\go1_base\Hook;
 
 class BlockInfo {
   public function import() {
     $info = array();
-    foreach (at_modules('at_base', 'blocks') as $module) {
+    foreach (go1_modules('go1_base', 'blocks') as $module) {
       $info += $this->importResource($module);
     }
     return $info;
@@ -12,10 +12,10 @@ class BlockInfo {
 
   private function importResource($module) {
     $info = array();
-    foreach (at_config($module, 'blocks')->get('blocks') as $k => $block) {
+    foreach (go1_config($module, 'blocks')->get('blocks') as $k => $block) {
       $cache = DRUPAL_CACHE_PER_ROLE;
       if (!empty($block['cache'])) {
-        $cache = at_eval($block['cache']);
+        $cache = go1_eval($block['cache']);
       }
 
       $info["{$module}|{$k}"] = array(

@@ -1,5 +1,5 @@
 <?php
-namespace Drupal\at_base\Config;
+namespace Drupal\go1_base\Config;
 
 class Admin_Form {
   private $config;
@@ -19,7 +19,7 @@ class Admin_Form {
   private $form_state;
 
   public function __construct($module, $id) {
-    $this->config = at_config($module, $id);
+    $this->config = go1_config($module, $id);
   }
 
   public function setForm($form) {
@@ -31,19 +31,19 @@ class Admin_Form {
   }
 
   public function get() {
-    $iframe = drupal_get_path('module', 'at_base') . '/misc/html/jsonEditor.html';
+    $iframe = drupal_get_path('module', 'go1_base') . '/misc/html/jsonEditor.html';
     $iframe = url('<front>', array('absolute' => TRUE)) . '/' . $iframe;
 
     $form = $this->form;
 
-    $form['at_config_item'] = array(
+    $form['go1_config_item'] = array(
       '#type' => 'textarea',
       '#default_value' => json_encode($this->config->getAll()),
       '#prefix' => '<iframe src="'. $iframe .'" style="width: 100%; height: 500px;"></iframe>',
       '#suffix' => '<noscript>Require javascript enabled</noscript>',
     );
 
-    $form['at_config_submit'] = array('#type' => 'submit', '#value' => t('Save'));
+    $form['go1_config_submit'] = array('#type' => 'submit', '#value' => t('Save'));
 
     return $form;
   }
@@ -51,10 +51,10 @@ class Admin_Form {
   public function validate() {
     $json = array();
 
-    if (empty($this->form_state['values']['at_config_item'])) {
+    if (empty($this->form_state['values']['go1_config_item'])) {
       $error = TRUE;
     }
-    elseif (!$json = json_decode($this->form_state['values']['at_config_item'], TRUE)) {
+    elseif (!$json = json_decode($this->form_state['values']['go1_config_item'], TRUE)) {
       $error = TRUE;
     }
 
@@ -62,12 +62,12 @@ class Admin_Form {
       form_set_error('', 'Invalid config data');
     }
     else {
-      $this->form_state['at_config_json'] = $json;
+      $this->form_state['go1_config_json'] = $json;
     }
   }
 
   public function submit() {
-    $json = &$this->form_state['at_config_json'];
+    $json = &$this->form_state['go1_config_json'];
     $this->config->setAll($json);
     $this->config->write();
   }

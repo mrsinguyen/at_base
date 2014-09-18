@@ -1,30 +1,30 @@
 <?php
-namespace Drupal\at_base\Helper;
+namespace Drupal\go1_base\Helper;
 
 /**
  * Usage:
  *
- *  at_container('helper.config_fetcher')
- *    ->getItems('at_base', 'services', 'services', TRUE)
+ *  go1_container('helper.config_fetcher')
+ *    ->getItems('go1_base', 'services', 'services', TRUE)
  *  ;
  *
  * @todo  Test me
- * @todo  Remove duplication code — at_modules('at_base', …)
- * @todo  Support expression_language:evaluate() — check \Drupal\at_base\Hook\BlockInfo
+ * @todo  Remove duplication code — go1_modules('go1_base', …)
+ * @todo  Support expression_language:evaluate() — check \Drupal\go1_base\Hook\BlockInfo
  */
 class Config_Fetcher {
   public function getItems($module, $id, $key, $include_base = FALSE, $reset = FALSE) {
     $o = array(
       'ttl' => '+ 1 year',
-      'id' => "ATConfig:{$module}:{$id}:{$key}:" . ($include_base ? 1 : 0),
+      'id' => "GO1Config:{$module}:{$id}:{$key}:" . ($include_base ? 1 : 0),
       'reset' => $reset,
     );
 
-    return at_cache($o, array($this, 'fetchItems'), array($module, $id, $key, $include_base));
+    return go1_cache($o, array($this, 'fetchItems'), array($module, $id, $key, $include_base));
   }
 
   public function fetchItems($module, $id, $key, $include_base) {
-    $modules = at_modules($module, $id);
+    $modules = go1_modules($module, $id);
 
     if ($include_base) {
       $modules = array_merge(array($module), $modules);
@@ -32,7 +32,7 @@ class Config_Fetcher {
 
     $items = array();
     foreach ($modules as $module_name) {
-      $items = array_merge($items, at_config($module_name, $id)->get($key));
+      $items = array_merge($items, go1_config($module_name, $id)->get($key));
     }
 
     return $items;
@@ -41,11 +41,11 @@ class Config_Fetcher {
   public function getItem($module, $id, $key, $item_key, $include_base = FALSE, $reset = FALSE) {
     $o = array(
       'ttl' => '+ 1 year',
-      'id' => "ATConfig:{$module}:{$id}:{$key}:{$item_key}:" . ($include_base ? 1 : 0),
+      'id' => "GO1Config:{$module}:{$id}:{$key}:{$item_key}:" . ($include_base ? 1 : 0),
       'reset' => $reset,
     );
 
-    return at_cache($o, array($this, 'fetchItem'), array($module, $id, $key, $item_key, $include_base));
+    return go1_cache($o, array($this, 'fetchItem'), array($module, $id, $key, $item_key, $include_base));
   }
 
   public function fetchItem($module, $id, $key, $item_key, $include_base) {

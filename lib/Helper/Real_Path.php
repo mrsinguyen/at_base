@@ -1,12 +1,12 @@
 <?php
-namespace Drupal\at_base\Helper;
+namespace Drupal\go1_base\Helper;
 
 /**
  * Tool to replace tokens with real values:
  *
  * @code
  *  %theme    => /path/to/active_theme/
- *  @at_base  => /path/to/at_base/
+ *  @go1_base  => /path/to/go1_base/
  *  %%name    => /path/to/libraries/name
  * @code
  *
@@ -70,7 +70,7 @@ class Real_Path {
       
       if (!empty($matches)) {
         $library = $matches[1];
-        if ($library_path = at_library($library, NULL, $include_drupal_root)) {
+        if ($library_path = go1_library($library, NULL, $include_drupal_root)) {
           return str_replace("%{$library}/", $library_path . '/', $path);
         }
       }

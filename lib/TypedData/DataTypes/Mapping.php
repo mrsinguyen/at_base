@@ -1,10 +1,10 @@
 <?php
-namespace Drupal\at_base\TypedData\DataTypes;
+namespace Drupal\go1_base\TypedData\DataTypes;
 
 /**
- * at_data($schema, $input)->validate($error);
+ * go1_data($schema, $input)->validate($error);
  *
- * Example schema, check `at_base/config/schema/route.yml`
+ * Example schema, check `go1_base/config/schema/route.yml`
  */
 class Mapping extends Mapping_Base {
   protected function validateDefinition(&$error) {
@@ -44,7 +44,7 @@ class Mapping extends Mapping_Base {
     );
 
     foreach ($this->def['mapping'] as $k => $e) {
-      if (!at_data($element_schema, $e)->validate($error)) {
+      if (!go1_data($element_schema, $e)->validate($error)) {
         $error = "Wrong schema: {$error}";
         return FALSE;
       }
@@ -93,7 +93,7 @@ class Mapping extends Mapping_Base {
   protected function validateElementType(&$error) {
     foreach ($this->value as $k => $v) {
       if (!empty($this->def['mapping'][$k])) {
-        if (!at_data($this->def['mapping'][$k], $v)->validate($error)) {
+        if (!go1_data($this->def['mapping'][$k], $v)->validate($error)) {
           $error = "Invalid property `{$k}`: {$error}";
           return FALSE;
         }

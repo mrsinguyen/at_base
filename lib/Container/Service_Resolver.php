@@ -1,6 +1,6 @@
 <?php
 
-namespace Drupal\at_base\Container;
+namespace Drupal\go1_base\Container;
 
 /**
  * Help to find service defintions, convert them to real object.
@@ -12,7 +12,7 @@ class Service_Resolver {
    * @param string $id
    */
   public function getDefinition($id) {
-    if (!$def = at_container('helper.config_fetcher')->getItem('at_base', 'services', 'services', $id, TRUE)) {
+    if (!$def = go1_container('helper.config_fetcher')->getItem('go1_base', 'services', 'services', $id, TRUE)) {
       throw new \Exception("Missing service: {$id}");
     }
 
@@ -41,7 +41,7 @@ class Service_Resolver {
         $this->resolveDependencies($id);
       }
       elseif (is_string($id) && '@' === substr($id, 0, 1)) {
-        at_container(substr($id, 1));
+        go1_container(substr($id, 1));
       }
     }
   }
@@ -56,7 +56,7 @@ class Service_Resolver {
   public function convertDefinitionToService($def, $args = array(), $calls = array()) {
     if (!empty($def['factory_service'])) {
       return call_user_func_array(
-        array(at_container($def['factory_service']), $def['factory_method']), $args
+        array(go1_container($def['factory_service']), $def['factory_method']), $args
       );
     }
 
@@ -64,7 +64,7 @@ class Service_Resolver {
       $service = call_user_func_array(array(new $def['factory_class'], $def['factory_method']), $args);
     }
     else {
-      $service = at_newv($def['class'], $args);
+      $service = go1_newv($def['class'], $args);
     }
 
     if (!empty($calls)) {
@@ -86,7 +86,7 @@ class Service_Resolver {
   public function fetchDefinitions($tag) {
     $tagged_defs = array();
 
-    $defs = at_container('helper.config_fetcher')->getItems('at_base', 'services', 'services', TRUE);
+    $defs = go1_container('helper.config_fetcher')->getItems('go1_base', 'services', 'services', TRUE);
     foreach ($defs as $name => $def) {
       if (empty($def['tags'])) {
         continue;

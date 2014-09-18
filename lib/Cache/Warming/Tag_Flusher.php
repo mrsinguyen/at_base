@@ -1,13 +1,13 @@
 <?php
 
-namespace Drupal\at_base\Cache\Warming;
+namespace Drupal\go1_base\Cache\Warming;
 
 /**
  * Class for service cache.tag_flusher
  *
  * Delete cached data by tags.
  *
- *  at_container('cache.tag_flusher')->flush($tags);
+ *  go1_container('cache.tag_flusher')->flush($tags);
  */
 class Tag_Flusher {
   protected $db;
@@ -51,7 +51,7 @@ class Tag_Flusher {
    * Clear cached items which were tagged.
    */
   protected function clearCachedItems() {
-    $items = $this->db->select('at_base_cache_tag', 'atag')
+    $items = $this->db->select('go1_base_cache_tag', 'atag')
               ->fields('atag', array('bin', 'cid'))
               ->condition('tag', $this->tags)
               ->execute()
@@ -66,7 +66,7 @@ class Tag_Flusher {
    * Clear saved pairs of (tag, cache_id).
    */
   protected function clearTags() {
-    $this->db->delete('at_base_cache_tag')
+    $this->db->delete('go1_base_cache_tag')
       ->condition('tag', $this->tags)
       ->execute()
     ;

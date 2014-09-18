@@ -1,16 +1,16 @@
 <?php
-namespace Drupal\at_base\Helper\Content_Render;
+namespace Drupal\go1_base\Helper\Content_Render;
 
 /**
  * Interface of caching handler for Conent_Render service.
  *
- * @see Drupal\at_base\Helper\Content_Render::render()
+ * @see Drupal\go1_base\Helper\Content_Render::render()
  */
 interface CacheHandler_Interface {
   /**
    * Cache options
    *
-   * @see  at_cache()
+   * @see  go1_cache()
    * @return CacheHandler_Interface
    */
   public function setOptions($options);
