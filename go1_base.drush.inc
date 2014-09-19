@@ -44,7 +44,7 @@ function go1_base_drush_command() {
       'drush fontello => Build Fontello library',
     ),
     'bootstrap' => DRUSH_BOOTSTRAP_DRUPAL_FULL,
-    'aliases' => array('atft'),
+    'aliases' => array('go1ft'),
   );
 
   return $cmds;
