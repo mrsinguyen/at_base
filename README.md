@@ -3,7 +3,7 @@ GO1 Base
 
 Provide some more API for developer to work with Drupal 7.
 
-[![Build Status](https://travis-ci.org/mrsinguyen/go1_base.svg?branch=v7.2)](https://travis-ci.org/mrsinguyen/go1_base)
+[![Build Status](https://travis-ci.org/mrsinguyen/go1_base.svg?branch=7.x-2.x)](https://travis-ci.org/mrsinguyen/go1_base)
 
 ### Install
 
