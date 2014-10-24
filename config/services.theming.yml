@@ -29,5 +29,5 @@ services:
       - ['setLoader', ['@twig.string_loader']]
 
   twig_controller:
-    class: 'Drupal\go1_base\Helper\Controller_Resolver\Twig_Controller'
+    class: 'Drupal\go1_base\Helper\ControllerResolver\Twig_Controller'
     arguments: ['@twig_string']

@@ -2,13 +2,13 @@
 
 namespace Drupal\go1_base\Route;
 
-use Drupal\go1_base\Helper\Content_Render;
+use Drupal\go1_base\Helper\ContentRender;
 
 class Controller {
 
   /**
    * Content render
-   * @var \Drupal\go1_base\Helper\Content_Render
+   * @var \Drupal\go1_base\Helper\ContentRender
    */
   private $render;
 
@@ -27,7 +27,7 @@ class Controller {
   private $menu_item;
 
   /**
-   * @param \Drupal\go1_base\Helper\Content_Render $content_render
+   * @param \Drupal\go1_base\Helper\ContentRender $content_render
    * @param string $request_path Request path — Example: user/login
    */
   public function __construct($content_render, $request_path) {

@@ -14,7 +14,7 @@ namespace Drupal\go1_base\Helper;
  *
  * @see Drupal\go1_base\Tests\CommonTest::testControllerRevoler()
  */
-class Controller_Resolver {
+class ControllerResolver {
   private $def;
 
   public function get($def) {

@@ -12,7 +12,7 @@ namespace Drupal\go1_base\Helper;
  *
  * @see \Go1_Base_TestCase::testRealPath()
  */
-class Real_Path {
+class RealPath {
 
   /**
    * @param  string $path

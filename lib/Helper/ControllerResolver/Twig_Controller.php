@@ -1,5 +1,5 @@
 <?php
-namespace Drupal\go1_base\Helper\Controller_Resolver;
+namespace Drupal\go1_base\Helper\ControllerResolver;
 
 class Twig_Controller {
   private $template = '';

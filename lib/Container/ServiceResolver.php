@@ -5,7 +5,7 @@ namespace Drupal\go1_base\Container;
 /**
  * Help to find service defintions, convert them to real object.
  */
-class Service_Resolver {
+class ServiceResolver {
   /**
    * Get service definition in configuration files.
    *

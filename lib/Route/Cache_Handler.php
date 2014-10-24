@@ -1,10 +1,11 @@
 <?php
+
 /**
  * Cache handler for route.
  */
 namespace Drupal\go1_base\Route;
 
-use Drupal\go1_base\Helper\Content_Render\CacheHandler_Interface;
+use Drupal\go1_base\Helper\ContentRender\CacheHandler_Interface;
 
 class Cache_Handler implements CacheHandler_Interface {
   protected $options;

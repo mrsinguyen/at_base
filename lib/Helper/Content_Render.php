@@ -2,8 +2,8 @@
 
 namespace Drupal\go1_base\Helper;
 
-use Drupal\go1_base\Helper\Content_Render\CacheHandler_Interface;
-use Drupal\go1_base\Helper\Content_Render\Process;
+use Drupal\go1_base\Helper\ContentRender\CacheHandler_Interface;
+use Drupal\go1_base\Helper\ContentRender\Process;
 
 /**
  * Helper class for rendering data:
@@ -25,7 +25,7 @@ use Drupal\go1_base\Helper\Content_Render\Process;
  * @see  \Drupal\go1_base\Hook\BlockView
  * @see  \Go1_Twig_TestCase::testContentRender()
  */
-class Content_Render {
+class ContentRender {
   /**
    * Data to be rendered.
    *

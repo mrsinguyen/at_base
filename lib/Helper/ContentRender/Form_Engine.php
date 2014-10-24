@@ -1,6 +1,6 @@
 <?php
 
-namespace Drupal\go1_base\Helper\Content_Render;
+namespace Drupal\go1_base\Helper\ContentRender;
 
 class Form_Engine extends Base_Engine {
   public function process() {
