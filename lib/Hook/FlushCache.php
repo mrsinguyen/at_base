@@ -4,7 +4,7 @@ namespace Drupal\go1_base\Hook;
 /**
  * Details for go1_base_flush_caches().
  */
-class Flush_Cache {
+class FlushCache {
   public function execute() {
     $this->flushAPCData();
     $this->flushTaggedCacheData();

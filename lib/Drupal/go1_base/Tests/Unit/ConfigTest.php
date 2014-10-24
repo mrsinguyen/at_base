@@ -65,7 +65,7 @@ class ConfigTest extends UnitTestCase {
    */
   public function testWeight() {
     go1_container('wrapper.db')->resetLog();
-    go1_id(new \Drupal\go1_base\Hook\Flush_Cache())->resolveModuleWeight('go1test_base', 10);
+    go1_id(new \Drupal\go1_base\Hook\FlushCache())->resolveModuleWeight('go1test_base', 10);
     $db_log = go1_container('wrapper.db')->getLog('update', 'system');
 
     $expected = array(

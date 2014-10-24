@@ -25,7 +25,7 @@ function go1_base_menu() {
  * @tag autoload
  */
 function go1_base_flush_caches() {
-  go1_id(new \Drupal\go1_base\Hook\Flush_Cache())->execute();
+  go1_id(new \Drupal\go1_base\Hook\FlushCache())->execute();
 }
 
 /**
@@ -38,7 +38,7 @@ function go1_base_modules_enabled($modules) {
   go1_modules('go1_base', TRUE);
 
   // Rebuild module weight
-  go1_id(new Drupal\go1_base\Hook\Flush_Cache())->fixModuleWeight();
+  go1_id(new Drupal\go1_base\Hook\FlushCache())->fixModuleWeight();
 }
 
 /**
