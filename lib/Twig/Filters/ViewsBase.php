@@ -5,7 +5,7 @@ namespace Drupal\go1_base\Twig\Filters;
 /**
  * Base class for drupalView twig filter, provide basic get/set methods.
  */
-abstract class Views_Base {
+abstract class ViewsBase {
   protected $name;
   protected $display_id;
   protected $view;

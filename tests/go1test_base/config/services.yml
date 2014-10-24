@@ -21,7 +21,7 @@ services:
       - { name: go1test2, weight: -10 }
 
   go1test_base.dynamic_arguments:
-    class: 'Drupal\go1test_base\Dynamic_Arguments'
+    class: 'Drupal\go1test_base\DynamicArguments'
     arguments: ['%go1test_base:parameters:dynamic_param_1', '%go1test_base:parameters:dynamic_service_1']
 
   go1test_base.include_me:

@@ -8,7 +8,7 @@ namespace Drupal\go1_base\Twig\Filters;
  * @todo  More test case for view with custom template, …
  * @todo  Test pager option.
  */
-class Views extends Views_Base {
+class Views extends ViewsBase {
   public function __construct() {
     $args = func_get_args();
 

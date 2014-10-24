@@ -41,7 +41,7 @@ class ContainerTest extends UnitTestCase {
 
   public function testDynamicArguments() {
     $service = go1_container('go1test_base.dynamic_arguments');
-    $this->assertEqual('Drupal\go1test_base\Dynamic_Arguments', get_class($service));
+    $this->assertEqual('Drupal\go1test_base\DynamicArguments', get_class($service));
     $this->assertEqual('go1test_base', $service->getDynParam());
     $this->assertEqual('Drupal\go1test_base\Service_1', get_class($service->getDynService()));
   }
