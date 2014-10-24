@@ -70,4 +70,4 @@ twig_filters:
   # ---------------------
   # Example: {{ "%module:%id:%key"|go1_config }}
   __go1_config: [\Drupal\go1_base\Twig\Filters\GO1Config, render]
-  __cache: [\Drupal\go1_base\Twig\Filters\Cache_Filter, render]
+  __cache: [\Drupal\go1_base\Twig\Filters\CacheFilter, render]
