@@ -6,7 +6,7 @@ namespace Drupal\go1_base\Cache\Warming\Warmer;
  *
  *
  */
-interface Warmer_Interface {
+interface WarmerInterface {
   /**
    * Check if the cache should warm a specific tag.
    *
