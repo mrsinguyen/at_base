@@ -2,7 +2,7 @@
 namespace Drupal\go1_base;
 
 use Drupal\go1_base\Container\Service_Resolver;
-use Drupal\go1_base\Container\Argument_Resolver;
+use Drupal\go1_base\Container\ArgumentResolver;
 use Drupal\go1_base\Helper\Config_Fetcher;
 use Drupal\go1_base\Helper\Wrapper\Database as DB_Wrapper;
 use Drupal\go1_base\Helper\Wrapper\Cache as Cache_Wrapper;
@@ -25,7 +25,7 @@ class Container extends \Pimple {
       'wrapper.cache' => function() { return new Cache_Wrapper(); },
       'config' => function() { return new Config(new Config_Resolver()); },
       'service.resolver' => function() { return new Service_Resolver(); },
-      'argument.resolver' => function() { return new Argument_Resolver(); },
+      'argument.resolver' => function() { return new ArgumentResolver(); },
       'helper.config_fetcher' => function() { return new Config_Fetcher(); },
     ));
   }

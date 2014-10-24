@@ -1,7 +1,7 @@
 <?php
 namespace Drupal\go1_base\Config;
 
-class Admin_Form {
+class AdminForm {
   private $config;
 
   /**
