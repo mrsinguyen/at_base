@@ -250,8 +250,12 @@ function go1_library($name, $version = 'default', $include_drupal_root = TRUE) {
       return $include_drupal_root ? rtrim($return, '/') : substr($return, strlen(DRUPAL_ROOT) + 1);
     }
   }
+  $msg = "Missing library: {$name} (version {$version})";
+  if (at_debug()) {
+    $msg .= ' You can run `drush go1r` to install missing dependencies.';
+  }
+  throw new Exception($msg);
 
-  throw new Exception("Missing library: {$name} (version {$version})");
 }
 
 /**
