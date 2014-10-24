@@ -12,7 +12,7 @@ namespace Drupal\go1_base\Helper;
  * @todo  Remove duplication code — go1_modules('go1_base', …)
  * @todo  Support expression_language:evaluate() — check \Drupal\go1_base\Hook\BlockInfo
  */
-class Config_Fetcher {
+class ConfigFetcher {
   public function getItems($module, $id, $key, $include_base = FALSE, $reset = FALSE) {
     $o = array(
       'ttl' => '+ 1 year',

@@ -5,9 +5,9 @@
  */
 namespace Drupal\go1_base\Route;
 
-use Drupal\go1_base\Helper\ContentRender\CacheHandler_Interface;
+use Drupal\go1_base\Helper\ContentRender\CacheHandlerInterface;
 
-class Cache_Handler implements CacheHandler_Interface {
+class Cache_Handler implements CacheHandlerInterface {
   protected $options;
   protected $callback;
 

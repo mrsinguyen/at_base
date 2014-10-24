@@ -2,7 +2,7 @@
 
 namespace Drupal\go1_base\Helper;
 
-use Drupal\go1_base\Helper\ContentRender\CacheHandler_Interface;
+use Drupal\go1_base\Helper\ContentRender\CacheHandlerInterface;
 use Drupal\go1_base\Helper\ContentRender\Process;
 
 /**
@@ -34,7 +34,7 @@ class ContentRender {
   private $data;
 
   /**
-   * @var CacheHandler_Interface
+   * @var CacheHandlerInterface
    */
   private $cache_handler;
 
@@ -52,7 +52,7 @@ class ContentRender {
     return $this->data;
   }
 
-  public function setCacheHandler(CacheHandler_Interface $cache_handler) {
+  public function setCacheHandler(CacheHandlerInterface $cache_handler) {
     $this->cache_handler = $cache_handler;
     return $this;
   }

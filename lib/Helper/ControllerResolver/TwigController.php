@@ -1,7 +1,7 @@
 <?php
 namespace Drupal\go1_base\Helper\ControllerResolver;
 
-class Twig_Controller {
+class TwigController {
   private $template = '';
   private $arguments = array();
   private $twig;

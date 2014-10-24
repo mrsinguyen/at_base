@@ -1,7 +1,7 @@
 <?php
 namespace Drupal\go1_base\Helper\ContentRender;
 
-class Process_Call {
+class ProcessCall {
   private $before;
 
   public function __construct($before) {

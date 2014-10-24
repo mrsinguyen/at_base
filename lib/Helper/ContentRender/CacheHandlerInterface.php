@@ -6,18 +6,18 @@ namespace Drupal\go1_base\Helper\ContentRender;
  *
  * @see Drupal\go1_base\Helper\ContentRender::render()
  */
-interface CacheHandler_Interface {
+interface CacheHandlerInterface {
   /**
    * Cache options
    *
    * @see  go1_cache()
-   * @return CacheHandler_Interface
+   * @return CacheHandlerInterface
    */
   public function setOptions($options);
 
   /**
    * @param callable $callback
-   * @return CacheHandler_Interface
+   * @return CacheHandlerInterface
    */
   public function setCallback($callback);
 
