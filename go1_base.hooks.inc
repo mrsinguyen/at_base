@@ -7,7 +7,7 @@
 
 use \Drupal\go1_base\Route\Importer as RouteImporter;
 use \Drupal\go1_base\Hook\Menu as HookMenu;
-use \Drupal\go1_base\Hook\Page_Build as Hook_Page_Build;
+use \Drupal\go1_base\Hook\PageBuild as HookPageBuild;
 use \Drupal\go1_base\Hook\Entity\View_Alter as Hook_Entity_View_Alter;
 
 /**
@@ -146,7 +146,7 @@ function go1_base_user_logout($account) {
  */
 function go1_base_page_build(&$page) {
   if (go1_container('container')->offsetExists('page.blocks')) {
-    go1_id(new Hook_Page_Build($page, go1_container('page.blocks')))->execute();
+    go1_id(new HookPageBuild($page, go1_container('page.blocks')))->execute();
   }
 
   go1_container('breadcrumb_api')->pageBuild();
