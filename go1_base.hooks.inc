@@ -8,7 +8,7 @@
 use \Drupal\go1_base\Route\Importer as RouteImporter;
 use \Drupal\go1_base\Hook\Menu as HookMenu;
 use \Drupal\go1_base\Hook\PageBuild as HookPageBuild;
-use \Drupal\go1_base\Hook\Entity\View_Alter as Hook_Entity_View_Alter;
+use \Drupal\go1_base\Hook\Entity\ViewAlter as HookEntityViewAlter;
 
 /**
  * Implements hook_menu()
@@ -78,7 +78,7 @@ if (defined('GO1_BASE_ENTITY_TEMPLATE') && constant('GO1_BASE_ENTITY_TEMPLATE'))
    * Implements hook_entity_view_alter()
    */
   function go1_base_entity_view_alter(&$build, $entity_type) {
-    go1_id(new Hook_Entity_View_Alter($build, $entity_type))->execute();
+    go1_id(new HookEntityViewAlter($build, $entity_type))->execute();
   }
 }
 
