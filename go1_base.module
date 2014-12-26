@@ -251,7 +251,7 @@ function go1_library($name, $version = 'default', $include_drupal_root = TRUE) {
     }
   }
   $msg = "Missing library: {$name} (version {$version})";
-  if (at_debug()) {
+  if (go1_debug()) {
     $msg .= ' You can run `drush go1r` to install missing dependencies.';
   }
   throw new Exception($msg);
