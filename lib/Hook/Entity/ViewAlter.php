@@ -39,7 +39,11 @@ class ViewAlter {
   protected $view_mode;
 
   public function __construct(&$build, $entity_type) {
-    $entity = isset($build['#entity']) ? $build['#entity'] : $build['#' . $entity_type];
+    // Fix Notice: Undefined index: #bean
+    if (isset($build['#build'])) {
+      $build = $build['#build'];
+    }
+    $entity = (isset($build['#entity'])) ? $build['#entity'] : $build['#' . $entity_type];
     $this->build = &$build;
     $this->entity_type = $entity_type;
     $this->bundle = $build['#bundle'];
